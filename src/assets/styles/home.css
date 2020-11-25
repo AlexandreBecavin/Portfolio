@@ -1,0 +1,308 @@
+@import url("https://use.typekit.net/obe2jlt.css");
+.home{
+   
+    padding-top: 60px;
+}
+
+
+/* -----------------
+Header page 
+------------------*/
+.home .bg_image{
+    background-image: url(../img/bg_header.png);
+    background-size: cover;
+    background-position: center -3px;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+}
+
+.home .bg_image .container{
+    min-height: calc(100vh - 60px);
+    display: flex;
+    padding: 0;
+    position: relative;
+}
+
+.text_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    width: 100%;
+}
+
+.container_header{
+    width: 50%;
+}
+
+.container_header .subtitle{
+    font-family: brush-atf, sans-serif;
+    color: #FC4E54;
+    transform: rotate(-15deg);
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 2.2rem;
+}
+
+.container_header .Primary_title{
+    font-family: "Cargo";
+    font-size: 5rem;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.btn{
+    padding: .5rem 1.5rem;
+    border: 1px solid #FC4E54;
+    font-weight: bold;
+}
+
+.container_header .btn{
+    text-transform: uppercase;
+    margin: 2rem 0;
+    display: inline-block;
+}
+
+.container-icon{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+
+.container-icon a i{
+    color: white !important;
+    margin: 0 .3rem;
+}
+
+.scroll-downs {
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    left: 0;
+    margin: auto;  
+    width :34px;
+    height: 55px;
+}
+.mousey {
+    width: 3px;
+    padding: 8px 12px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    opacity: 0.75;
+    box-sizing: content-box;
+}
+.scroller {
+    width: 3px;
+    height: 8px;
+    border-radius: 25%;
+    background-color: #fff;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+    animation-iteration-count: infinite;
+}
+@keyframes scroll {
+    0% { opacity: 0; }
+    10% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(10px); opacity: 0;}
+}
+
+
+/* ---------------------
+Section presentation
+----------------------*/
+.titre_section{
+    height: 13vw;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.text_deco{
+    position: absolute;
+    font-size: 11vw;
+    font-family: "cargo";
+    color: #F2F2F2;
+    overflow: none;
+    text-transform: uppercase;
+
+}
+
+.titre_2{
+    color: #FC4E54;
+    font-size: 4rem;
+    font-family: "cargo";
+    font-weight: normal;
+    z-index: 10;
+    text-transform: uppercase;
+}
+
+.contenu_pres{
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+.contenu_pres p{
+  font-size: 0.9rem;
+  color: black;
+  padding-right: 2rem;  
+  flex-basis: 40%;
+}
+
+.contenu_pres img{
+    transform: rotate(-10deg);
+    width: auto;
+    margin: auto;
+}
+
+.lien_section{
+    padding-top: 60px;
+}
+
+/* ---------------------
+Section Compétences
+----------------------*/
+
+.block_dark{
+    background-color: #212121;
+}
+
+.text_deco.dark{
+    color: #2D2D2D;
+}
+
+.contenu_competences{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 7rem;
+}
+
+.contenu_competences .competence{
+    margin: 3.2rem 0rem;
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.contenu_competences .competence .v-progress-circular{
+    width: 10vw !important;
+    height: 10vw !important;
+
+}
+
+.contenu_competences .competence .v-progress-circular__underlay{
+    stroke: white;
+}
+
+.contenu_competences .competence .v-progress-circular__info{
+    color: white;
+    font-size: 2rem;
+    font-family: "cargo";
+}
+
+.contenu_competences .competence p{
+    margin-top: 3px;
+    font-size: 1.5rem;
+}
+
+/* ---------------------
+Section Projet
+----------------------*/
+
+.contenu_projet{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 7rem;
+}
+
+.contenu_projet .projet{
+    margin: 3.2rem 0rem;
+    flex-basis: 25%;
+    text-align: center;
+    position: relative;
+}
+
+.contenu_projet .projet .img_projet{
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+.contenu_projet .projet  .detail_projet{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 10%;
+    opacity: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.25s;
+
+}
+
+.contenu_projet .projet  .detail_projet:hover{
+    opacity: 1;
+    background-color: #fc4e54de;
+    transition-duration: 0.25s;
+}
+
+.contenu_projet .projet h3{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contenu_projet .projet i{
+    color: #fff;
+}
+
+
+/* ---------------------
+Section contact
+----------------------*/
+.container_form{
+    display: flex;
+}
+
+.container_form > div{
+    width: 50%;
+}
+
+.form_contact div{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form_contact label{
+    display: block;
+}
+
+.form_contact input{
+    width: 60%;
+    height: 30px;
+    background-color: #D5D5D5;
+}
+
+.form_contact textarea{
+    width: 60%;
+    min-height: 100px;
+    background-color: #D5D5D5;
+}
+
+.form_contact input[type='submit']{
+    background-color: #FC4E54;
+    color:white;
+    height: 35px;
+}
+
+.container_form h3, .container_form p{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.container_form .container-icon{
+    justify-content: flex-start;
+}
+
