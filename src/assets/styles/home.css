@@ -1,6 +1,7 @@
 @import url("https://use.typekit.net/obe2jlt.css");
-.home{
-   
+
+
+.home{ 
     padding-top: 60px;
 }
 
@@ -9,7 +10,7 @@
 Header page 
 ------------------*/
 .home .bg_image{
-    background-image: url(../img/bg_header.png);
+    background-image: url(../img/bg_header.webp);
     background-size: cover;
     background-position: center -3px;
     min-height: calc(100vh - 60px);
@@ -55,6 +56,7 @@ Header page
     padding: .5rem 1.5rem;
     border: 1px solid #FC4E54;
     font-weight: bold;
+    display: inline-block;
 }
 
 .container_header .btn{
@@ -69,10 +71,16 @@ Header page
     margin-bottom: 1rem;
 }
 
+.icon{
+    display: flex;
+    align-items: center;
+}
 
-.container-icon a i{
+
+.icon_reseau{
     color: white !important;
     margin: 0 .3rem;
+    width: 2rem;
 }
 
 .scroll-downs {
@@ -141,6 +149,7 @@ Section presentation
 
 .contenu_pres{
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 5rem;
 }
 
@@ -169,7 +178,7 @@ Section Compétences
     background-color: #212121;
 }
 
-.text_deco.dark{
+.block_dark .text_deco{
     color: #2D2D2D;
 }
 
@@ -254,8 +263,9 @@ Section Projet
     margin-bottom: 0.5rem;
 }
 
-.contenu_projet .projet i{
-    color: #fff;
+.contenu_projet .projet a{
+    display: flex;
+    align-items: center;
 }
 
 
@@ -264,6 +274,7 @@ Section contact
 ----------------------*/
 .container_form{
     display: flex;
+    flex-wrap:wrap;
 }
 
 .container_form > div{
@@ -302,7 +313,80 @@ Section contact
     margin-bottom: 1.5rem;
 }
 
+.container_form h3{
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.container_form hr{
+    width: 80px;
+}
+
 .container_form .container-icon{
     justify-content: flex-start;
 }
 
+@media (max-width: 1350px){
+    .container_header{
+        margin-left: 0.5rem;
+    }
+
+    .contenu_pres p{
+        flex-basis: 100%;
+        margin-bottom: 3.5rem;
+    }
+
+    .contenu_competences .competence{
+        flex-basis: 50%;
+
+    }
+
+    .contenu_competences .competence .v-progress-circular{
+        width: 25vw !important;
+        height: 25vw !important;
+    }
+
+    .contenu_projet .projet{
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 768px){
+    .container_header{
+        width: auto;
+        margin-left: 0.5rem;
+    }
+
+    .container_header .Primary_title{
+        font-size: 3rem;
+    }
+
+    .titre_2{
+        font-size: 2rem;
+    }
+
+    .text_deco{
+        font-size: 13vw;
+    }
+
+    .contenu_competences .competence{
+        flex-basis: 100%;
+    }
+
+    .contenu_competences .competence .v-progress-circular{
+        width: 40vw !important;
+        height: 40vw !important;
+    }
+
+    .contenu_projet .projet{
+        flex-basis: 100%;
+    }
+
+    .container_form > div{
+        flex-basis: 100%;
+    }
+
+    .form_contact input, .form_contact textarea{
+        width: 100%;
+    }
+}

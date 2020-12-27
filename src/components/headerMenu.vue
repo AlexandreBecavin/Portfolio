@@ -18,16 +18,16 @@
         <div class="menu" :class="{'open':activeTab===1}">
         <ul>
             <li class="menu__li--first" :class="{'open':activeTab===1}" @click="activeTab=0">
-            <a href="/#presentation">PRÉSENTATION_</a>
+                <a href="/#presentation">PRÉSENTATION_</a>
             </li>
             <li class="menu__li--third" :class="{'open':activeTab===1}" @click="activeTab=0">
-            <a href="/#competences">COMPÉTENCES_</a>
+                <a href="/#competences">COMPÉTENCES_</a>
             </li>
             <li class="menu__li--fourth" :class="{'open':activeTab===1}" @click="activeTab=0">
-            <a href="/#projets">MES PROJETS_</a>
+                <a href="/#projets">MES PROJETS_</a>
             </li>
             <li class="menu__li--fourth" :class="{'open':activeTab===1}" @click="activeTab=0">
-            <a href="#">ME CONTACTER_</a>
+                <a href="#">ME CONTACTER_</a>
             </li>
         </ul>
         </div>

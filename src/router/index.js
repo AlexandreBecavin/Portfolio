@@ -12,20 +12,19 @@ const routes = [
     component: Home
   },
   {
-    path: '/projet',
+    path: '/projet/:msg',
     name: 'projet',
-    // route level code-splitting
-    // this generates a separate chunk (projet.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "projet" */ '../views/projet.vue'),
+    component: () => import('../views/projet.vue'),
     props: true
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
+  scrollBehavior: () => ({ y: 0 }),
   base: process.env.BASE_URL,
   routes
+  
 })
 
 export default router

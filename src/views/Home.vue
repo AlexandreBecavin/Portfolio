@@ -11,10 +11,10 @@
         </div>
         <div class='container-icon'>
           <div class='icon'>
-            <a href='#'><v-icon>mdi-twitter</v-icon></a>
-            <a href='#'><v-icon>mdi-linkedin</v-icon></a>
-            <a href='#'><v-icon>mdi-github</v-icon></a>
-            <a href='#'><v-icon>mdi-email</v-icon></a>
+            <a href='#'><img :src="require('../assets/img/icon/twitter.svg')" alt="Réseau twitter" class='icon_reseau'/></a>
+            <a href='#'><img :src="require('../assets/img/icon/linkedin.svg')" alt="Réseau linkedin" class='icon_reseau'/></a>
+            <a href='#'><img :src="require('../assets/img/icon/github.svg')" alt="Réseau github" class='icon_reseau'/></a>
+            <a href='#'><img :src="require('../assets/img/icon/mail.svg')" alt="Réseau mail" class='icon_reseau'/></a>
           </div>
         </div>
       </div>
@@ -27,11 +27,9 @@
     </div>
     
     <v-container id='presentation' class='lien_section'>
-      <div class='titre_section'>
-        <p class='text_deco'>Présentation_</p>
-        <h2 class='titre_2'>Présentation_</h2>
-      </div>
-      
+
+      <Titre v-bind:Titre='titre1' /> 
+
       <div class='contenu_pres'>
         <p>Je m'appelle Alexandre, j'ai 19 ans et je suis passionné par le domaine du numérique depuis plusieurs années. C'est pour cela quand entrant au lycée je suis allé en Sti2D option SIN (Système d'information et numérique). Pendant ces années j'ai pu apprendre plusieurs langages tels que python, HTML/CSS, Java. À la fin de ces deux années j'ai eu mon Bac et je me suis orienté vers l'école MyDigitalSchool à Angers. Actuellement en deuxième année de cycle veb et digital. Voilà mon parcours !</P>
          <img :src="require('../assets/img/carte_de_visite.png')"/>
@@ -41,10 +39,11 @@
 
     <div class='block_dark lien_section' id='competences'>
       <v-container >
-        <div class='titre_section'>
-          <p class='text_deco dark'>Compétences_</p>
-          <h2 class='titre_2'>Compétences_</h2>
-        </div>
+
+        <Titre
+          v-bind:Titre='titre2'
+         /> 
+
           <competences/>
         <div>
         
@@ -53,74 +52,74 @@
       </v-container>
     </div>
 
-     <v-container id='projets' class='lien_section'>
-        <div class='titre_section'>
-          <p class='text_deco'>Mes projets_</p>
-          <h2 class='titre_2'>Mes projets_</h2>
-        </div>
+    <v-container id='projets' class='lien_section'>
+      <Titre
+        v-bind:Titre='titre3'
+      /> 
 
-        <div class='test'>
+      <div class='test'>
 
-          <div class='contenu_projet'>
-              <div v-for="(projet, i) in List_projet" :key="i" class="projet" target="_blank">
-                <img :src="projet.lien_image" class='img_projet'/>
-                <div class='detail_projet'>
-                  <div>
-                    <h3>{{projet.titre}}</h3>
-                    <router-link :to="{ name: 'projet', params: { msg: projet.lien_btn }}"><v-icon>mdi-magnify</v-icon>Voir le projet</router-link>
-                  </div>
+        <div class='contenu_projet'>
+            <div v-for="(projet, i) in List_projet" :key="i" class="projet" target="_blank">
+              <img :src="projet.lien_image" class='img_projet'/>
+              <div class='detail_projet'>
+                <div>
+                  <h3>{{projet.titre}}</h3>
+                  <router-link :to="`/projet/${projet.lien_btn}`"><img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau'/>Voir le projet</router-link>
                 </div>
               </div>
-          </div>
+            </div>
+        </div>
         
 
           <!--<img :src="require('../assets/img/projet/IMEA_portfolio.png')" alt=""/>
           <router-link :to="{ name: 'projet', params: { msg } }"> Go to your profile</router-link>-->
-        </div>
-      </v-container>
+      </div>
+    </v-container>
 
 
-      <div class='block_dark lien_section' id='contact'>
-        <v-container >
-          <div class='titre_section'>
-            <p class='text_deco dark'>Me contacter_</p>
-            <h2 class='titre_2'>Me contacter_</h2>
+    <div class='block_dark lien_section' id='contact'>
+      <v-container >
+
+        <Titre
+          v-bind:Titre='titre4'
+        />
+          
+        <div class='container_form'>
+          <div>
+            <form class='form_contact'>
+              <div>
+                <label>Nom Prénom</label>
+                <input type='text' name='nom_prenom'/>
+              </div>
+              <div>
+                <label>Email</label>
+                <input type='email' name='email'/>
+              </div>
+              <div>
+                <label>Message</label>
+                <textarea></textarea>
+              </div>
+              <div>
+                <input type='submit' name='Envoyer'>
+              </div>
+            </form>
           </div>
-            
-          <div class='container_form'>
-            <div>
-              <form class='form_contact'>
-                <div>
-                  <label>Nom Prénom</label>
-                  <input type='text' name='nom_prenom'/>
-                </div>
-                <div>
-                  <label>Email</label>
-                  <input type='email' name='email'/>
-                </div>
-                <div>
-                  <label>Message</label>
-                  <textarea></textarea>
-                </div>
-                <div>
-                  <input type='submit' name='Envoyer'>
-                </div>
-              </form>
-            </div>
-            <div>
-              <h3>Pour me joindre autrement</h3>
-              <p>alexandre.becavin@gmail.com</p>
-              <div class='container-icon'>
-                <div class='icon'>
-                  <a href='#'><v-icon>mdi-twitter</v-icon></a>
-                  <a href='#'><v-icon>mdi-linkedin</v-icon></a>
-                </div>
+          <div>
+            <h3>Pour me joindre autrement</h3>
+            <hr>
+            <p>alexandre.becavin@gmail.com</p>
+            <div class='container-icon'>
+              <div class='icon'>
+                <a href='#'><img :src="require('../assets/img/icon/twitter.svg')" alt="Réseau twitter" class='icon_reseau'/></a>
+                <a href='#'><img :src="require('../assets/img/icon/mail.svg')" alt="Mon mail" class='icon_reseau'/></a>
               </div>
             </div>
           </div>
+        </div>
 
-        </v-container>
-      </div>
+      </v-container>
+    </div>
 
 
   </div>
@@ -128,6 +127,8 @@
 
 <script>
 import competences from '../components/competences.vue'
+import Titre from '../components/titre.vue'
+
 //import listProjet from '../components/listProjet.vue'
 
 export default {
@@ -135,27 +136,34 @@ export default {
   
   components: {
     competences,
+    Titre,
     //listProjet,
   },
 
    data: () => ({
       List_projet: [
         {
-          lien_image: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
+          lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
           titre: 'Portfolio',
-          lien_btn: 'projet1'
+          lien_btn: 'Portfolio'
         },
         {
-          lien_image: require('../assets/img/miniature_projet/IMEA_Briquestore.png'),
+          lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
           titre: 'Briquestore',
-          lien_btn: 'projet2'
+          lien_btn: 'Briquestore'
         },
         {
-          lien_image: require('../assets/img/miniature_projet/IMEA_larencontre.jpg'),
+          lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
           titre: 'La Rencontre',
-          lien_btn: 'projet3'
+          lien_btn: 'La_rencontre'
         },
       ],  
+
+      titre1: 'Présentation_',
+      titre2: 'Compétences_',
+      titre3: 'Mes projets_',
+      titre4: 'Me contacter_',
+
     }),
 
 };

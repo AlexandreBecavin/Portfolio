@@ -15,20 +15,34 @@
         <img :src="projet.img_projet" v-bind:alt='projet.alt_projet' class='img_projet'/>
       </div>
       <div>
+        <h3>Présentation</h3>
         <p>{{projet.presentation}}</p>
         <p class='infogras'>Année</P>
         <p class='info'>{{projet.Annee}}</P>
         <p class='infogras'>Client</p>
         <p class='info'>{{projet.Client}}</p>
-        <p>{{projet.Mission}}</P>
+        <h3>Mes missions</h3>
+        <p v-html="projet.Mission">{{projet.Mission}}</P>
+        <h3>Outils utilisés</h3>
+        <div class='container_logi'>
+          <div v-for="(logi, i) in projet.logiciel" :key="i" class='list_logi' target="_blank">
+            <img :src="logi.img_logiciel" class='img_projet'/>
+            <p>{{logi.titre_logiciel}}</p>
+          </div>
+        </div>
+        <div class="lien_projet">
+          <div v-for="(btn, i) in projet.bouton_plus" :key="i" target="_blank">
+            <!--download-->
+            <a v-bind:href="btn.lien_btn" class='btn' target="_blank">{{btn.titre_btn}}</a>
+          </div> 
+        </div>
       </div>
     </div>
 
-    <div class='list_projet'>
-      <div class='titre_section'>
-        <p class='text_deco'>À Découvrir_</p>
-        <h2 class='titre_2'>À Découvrir_</h2>
-      </div>
+    <div class='list_projet decouvrir'>
+      <Titre
+          v-bind:Titre='titre1'
+        />
 
       <div class='test'>
         <div class='contenu_projet'>
@@ -37,7 +51,7 @@
             <div class='detail_projet'>
               <div>
                 <h3>{{info_projet.titre}}</h3>
-                <router-link :to="{ name: 'projet', params: { msg: info_projet.lien_btn }}"><v-icon>mdi-magnify</v-icon>Voir le projet</router-link>
+                <router-link :to="{ name: 'projet', params: { msg: info_projet.lien_btn }}"><img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau'/>Voir le projet</router-link>
               </div>
             </div>
           </div>
@@ -55,125 +69,194 @@
 
 
 <script>
+import Titre from '../components/titre.vue'
+
 export default {
   name: 'projet',
-  props: ['msg'],
+
+  components: {
+    Titre,
+  },
+
   data() {
       return {
-          projet: 'projet1',
-          projet1:
+          projet: 'Portfolio',
+          titre1: 'À Découvrir_',
+          Portfolio:
             {
-              img_presentation: require('../assets/img/projet/bg_portfolio.jpg'),
+              img_presentation: require('../assets/img/projet/Portfolio/bg_portfolio.webp'),
               alt_img_presentation: 'Image portfolio',
               Titre: 'Portfolio',
-              img_projet: require('../assets/img/projet/img_portfolio1.jpg'),
+              img_projet: require('../assets/img/projet/Portfolio/img_portfolio1.webp'),
               alt_projet: 'Portfolio',
-              presentation: 'Mon portfolio est un projet d’une durée d’environ 3 semaines. L’objectif de ce portfolio est de promouvoir mes compétences au sein d’entreprise ou de personne. Il est aussi là pour appuyer ma recherche de stage et d’alternance en mettent en avant des sites crées.',
+              presentation: "Mon portfolio est un projet créé en 3 semaines, mise à jour régulièrement que ce soit contenu ou code. Son objectif est de promouvoir mes compétences sur des personnes ou une entreprise. Il a comme but de m’aider dans ma recherche de stage et d'alternance.",
               Annee: '2020',
               Client: 'Personnel',
-              Mission: 'Pour ce portfolio j’ai réalisé les maquettes de toutes les pages du site, détaillé le contenu du site et développer le site (vueJs, html, css). L’enjeux de ce projet est de valider le cours « création de portfolio » mais aussi de m’aider dans le future pour mon avenir professionnel. ',
+              Mission: "<b>Graphisme :</b><ul><li>Création d'identité visuelle (typo, couleur, logo).</li><li>Création du zoning du site.</li><li>Création des maquettes fonctionnelles.</li><li>Création des maquettes graphiques.</li></ul><b>Développement :</b> <ul><li>Développement du site sous Vuejs.</li><li>Hébergement du site sur Netlify.</li><li>Optimisation des performances du site.</li></ul><b>Contenu :</b><ul><li>Rédaction des contenus.</li><li>Création des mockup pour les images.</li><li>Conversion des images en webp.</li></ul>",
               logiciel:[
                 {
-                  img_logiciel: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
+                  img_logiciel: require('../assets/img/outils/Xd.webp'),
                   titre_logiciel: 'AdobeXD',
                 },
                 {
-                  img_logiciel: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
-                  titre_logiciel: 'AdobeXD',
+                  img_logiciel: require('../assets/img/outils/Illustrator.webp'),
+                  titre_logiciel: 'Adobe illustrator',
                 },
                 {
-                  img_logiciel: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
-                  titre_logiciel: 'AdobeXD',
+                  img_logiciel: require('../assets/img/outils/Vuejs.webp'),
+                  titre_logiciel: 'Vuejs',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Html.webp'),
+                  titre_logiciel: 'Html',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Css.webp'),
+                  titre_logiciel: 'Css',
                 },
               ],
+              bouton_plus:[
+                {
+                  titre_btn: 'Voir le site',
+                  lien_btn: 'https://alexandrebecavin.netlify.app/',
+                },
+              ],
+
               List_projet:[
                 {
-                  lien_image: require('../assets/img/miniature_projet/IMEA_Briquestore.png'),
+                  lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
                   titre: 'Briquestore',
-                  lien_btn: 'projet2'
+                  lien_btn: 'Briquestore'
                 },
                 {
-                  lien_image: require('../assets/img/miniature_projet/IMEA_larencontre.jpg'),
+                  lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
                   titre: 'La Rencontre',
-                  lien_btn: 'projet3'
+                  lien_btn: 'La_rencontre'
                 },
               ]
             },
             
-            projet2:
+            Briquestore:
             {
-              img_presentation: require('../assets/img/projet/bg_Briquestore.jpg'),
+              img_presentation: require('../assets/img/projet/Briquestore/bg_Briquestore.webp'),
               alt_img_presentation: 'Image portfolio',
               Titre: 'Briquestore',
-              img_projet: require('../assets/img/projet/img_Briquestore1.jpg'),
+              img_projet: require('../assets/img/projet/Briquestore/img_Briquestore1.webp'),
               alt_projet: 'Briquestore',
-              presentation: 'Briquestore est un projet obtenu durant mon stage chez ACWD. Il a duré environ 2 mois. Le contrat de l’entreprise ACWD était une refonte du site Briquestore (site e-commerce de lego). L’objectif était de garder le style graphique mais de passer sur une version de PrestaShop plus récente (1.6 vers 1.7).',
+              presentation: "Briquestore est un projet réalisé durant mon stage chez ACWD. Le projet s'est étalé sur une durée de 2 mois. Le contrat de l'entreprise ACWD était une refonte du site de Briquestore (site e-commerce de Lego). L'objectif était de migrer le prestashop 1.6 du site en 1.7 tout en gardant le design actuel.",
               Annee: '2020',
               Client: 'Briquestore',
-              Mission: 'Durant ce projet, je me suis occupée de différentes tâches. Ma première mission était planifiée le projet avec un Gantt pour connaître le temps de travail ainsi que la date du début et de fin du projet. Ma seconde mission était de créer un programme Php qui permettait d’export tous les produits, catégories, taxe… de la base de données 1.6 vers celle de la 1.7. Enfin ma dernière mission était le développement du site site (intégration des pages, modification du back office pour correspondre au besoin clients). Sur ce projet j’ai mis en pratique mes compétences de gestion de projets et de développement. L’objectif de ce projet était de permettre à l’entreprise de gagner de l’argent mais aussi mettre mes compétences en application sur un projet réel. Je n’ai malheureusement pas pu assister à la fin du projet car mon stage c’est terminer avant. Le site était fini à 90% et l’entreprise était très satisfaite et m’a même proposé une alternance.',
+              Mission: "<b>Développement :</b><br><ul><li>Programme PHP, SQL pour exporter les produits du prestashop 1.6 vers 1.7</li><li>Développement du thème personnaliser 1.6 en 1.7</li><li>Modification du back office</li></u><b>Gestion de projet :</b><br><ul><li>diagramme de GANTT</li><li>réunion avec le client</li></ul><b>Résultat :</b><br><ul><li>Le site était fini a 90% avant la fin de mon stage et l'entreprise était content de mon travail.</ul></li>",
               logiciel:[
                 {
-                  img_logiciel: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
-                  titre_logiciel: 'AdobeXD',
+                  img_logiciel: require('../assets/img/outils/drive.webp'),
+                  titre_logiciel: 'Google drive',
                 },
                 {
-                  img_logiciel: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
-                  titre_logiciel: 'AdobeXD',
+                  img_logiciel: require('../assets/img/outils/trello.webp'),
+                  titre_logiciel: 'Trello',
                 },
                 {
-                  img_logiciel: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
-                  titre_logiciel: 'AdobeXD',
+                  img_logiciel: require('../assets/img/outils/Github.webp'),
+                  titre_logiciel: 'Github',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Prestashop.webp'),
+                  titre_logiciel: 'Prestashop',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Html.webp'),
+                  titre_logiciel: 'Html',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Css.webp'),
+                  titre_logiciel: 'Css',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/javascript.webp'),
+                  titre_logiciel: 'Javascript',
                 },
               ],
+
+              bouton_plus:[
+                {
+                  titre_btn: 'Voir le site',
+                  lien_btn: 'https://www.briquestore.fr/fr/',
+                },
+              ],
+
               List_projet:[
                 {
-                  lien_image: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
+                  lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
                   titre: 'Portfolio',
-                  lien_btn: 'projet1'
+                  lien_btn: 'Portfolio'
                 },
                 {
-                  lien_image: require('../assets/img/miniature_projet/IMEA_larencontre.jpg'),
+                  lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
                   titre: 'La Rencontre',
-                  lien_btn: 'projet3'
+                  lien_btn: 'La_rencontre'
                 },
               ]
             },
 
-            projet3:
+            La_rencontre:
             {
-              img_presentation: require('../assets/img/projet/bg_LaRencontre.jpg'),
+              img_presentation: require('../assets/img/projet/La_rencontre/bg_LaRencontre.webp'),
               alt_img_presentation: 'Image portfolio',
               Titre: 'La Rencontre',
-              img_projet: require('../assets/img/projet/img_LaRencontre.jpg'),
+              img_projet: require('../assets/img/projet/La_rencontre/img_LaRencontre.webp'),
               alt_projet: 'La Rencontre',
-              presentation: 'La rencontre est un projet de partiel d’une durée de 3 semaines. Accompagnées de 3 autres étudiants nous avons réalisé un site communautaire sur le thème du sport. Le site permet de discuter avec d’autres personnes sur un sport, un match, une équipe ou autres.',
+              presentation: "La rencontre est un projet d’études de première année. Le site à été créé durant mes 3 semaines de partiel. Accompagnés de 3 étudiants, nous avons réalisé un site communautaire sur le thème du sport. Le site propose de discuter virtuellement avec d'autres utilisateurs sur un sport, un match, une équipe, ou autre thème.",
               Annee: '2019 / 2020',
-              Client: 'Personnel / Étude',
-              Mission: 'Durant ce projet, j’ai réalisé la maquette page sélection sport, l’intégration de ¾ des pages du site, et le développement back du site (chat, liste des groupes, Connexion/Inscription). Pour réaliser ces tâches j’ai utilisé plusieurs compétences (Gestion de projet, Création de maquettes, Développement html, css, js,php). L’enjeux de ce projet était de valider ma première année au sein de My Digital School. À la fin de ces partiels mon année a été validée. Nous avons fini d’intégrer entièrement notre projet ainsi que les fonctionnalités principales. Une stratégie de communication avait aussi été installée par mes coéquipiers',
+              Client: 'Étude',
+              Mission: '<b>Graphisme :</b><ul><li>Réalisation de maquettes graphique</li></ul><b>Développement</b><ul><li>Développement du site en HTML, CSS, JavaScript, PHP, SQL.</li><li>Site responsive</li></ul><b>Gestion de projet :</b><ul><li>Gestion du trello</li></ul>',
               logiciel:[
                 {
-                  img_logiciel: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
-                  titre_logiciel: 'AdobeXD',
+                  img_logiciel: require('../assets/img/outils/trello.webp'),
+                  titre_logiciel: 'Trello',
                 },
                 {
-                  img_logiciel: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
-                  titre_logiciel: 'AdobeXD',
+                  img_logiciel: require('../assets/img/outils/Illustrator.webp'),
+                  titre_logiciel: 'Adobe illustrator',
                 },
                 {
-                  img_logiciel: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
-                  titre_logiciel: 'AdobeXD',
+                  img_logiciel: require('../assets/img/outils/Xd.webp'),
+                  titre_logiciel: 'Adobe xd',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Html.webp'),
+                  titre_logiciel: 'Html',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Css.webp'),
+                  titre_logiciel: 'Css',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/javascript.webp'),
+                  titre_logiciel: 'Javasript',
                 },
               ],
-              List_projet:[
+              bouton_plus:[
                 {
-                  lien_image: require('../assets/img/miniature_projet/IMEA_portfolio.png'),
-                  titre: 'Portfolio',
-                  lien_btn: 'projet1'
+                  titre_btn: 'Telecharger le dossier',
+                  lien_btn: 'assets/dossier_projet/La_rencontre.zip',
                 },
                 {
-                  lien_image: require('../assets/img/miniature_projet/IMEA_Briquestore.png'),
+                  titre_btn: 'Voir le site',
+                  lien_btn: '#',
+                },
+              ],
+
+              List_projet:[
+                {
+                  lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
+                  titre: 'Portfolio',
+                  lien_btn: 'Portfolio'
+                },
+                {
+                  lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
                   titre: 'Briquestore',
-                  lien_btn: 'projet2'
+                  lien_btn: 'Briquestore'
                 },
               ]
             },
@@ -181,22 +264,34 @@ export default {
   },
 
   mounted() {
-    console.log(this.msg);
-      if (this.msg) {
-          this.projet = this.test(this.msg);
+    if (this.$route.params.msg) {
+        this.projet = this.persist(this.$route.params.msg);
+    }else{
+      console.log('1');
+    }
+  },
+
+  watch: { 
+     '$route.params.msg': {
+        handler: function(msg) {
+           this.projet = this.persist(msg);
+        },
+        deep: true,
+        immediate: true
       }
   },
 
+
   methods:{
-    test: function (msg) {
-      if(msg == 'projet1'){
-        return this.projet1;
-      }else if(msg == 'projet2'){
-        return this.projet2;
-      }else if(msg == 'projet3'){
-        return this.projet3;
+    persist(msg) {
+      if(msg == 'Portfolio'){
+        return this.Portfolio;
+      }else if(msg == 'Briquestore'){
+        return this.Briquestore;
+      }else if(msg == 'La_rencontre'){
+        return this.La_rencontre;
       }
-    }
+    },
   }
 
 }

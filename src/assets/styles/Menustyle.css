@@ -1,7 +1,9 @@
 @font-face {
     font-family: cargo;
     src: url(../font/Cargo-Regular.otf);
+    font-display: swap;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
 /*---------------
@@ -227,4 +229,18 @@ header .hamburger.close span:first-child{
 }
 .bg-menu-animated__div-third.open {
     transition-delay: 300ms;
+}
+
+@media (max-width: 1350px){
+    .menu ul li{
+        font-size: 3rem;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px){
+    .menu ul li{
+        font-size: 2rem;
+        padding-left: 0;
+    }
 }

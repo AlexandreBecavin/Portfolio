@@ -69,22 +69,86 @@
     margin-top: 3rem;
 }
 
-.presentation_projet div{
+.presentation_projet > div{
     width: 50%;
 }
 
 .presentation_projet p{
     color: black;
-    padding: 1.5rem 2rem;
+    padding: 0rem 2rem;
 }
 
 .presentation_projet .infogras{
-    padding: 0rem 2rem;
+    padding: 1.5rem 2rem 0rem 2rem;
     font-weight: bold;
 }
 
 .presentation_projet .info{
     padding: 0.2rem 2rem;
+}
+
+.presentation_projet ul{
+    padding-left: 1rem;
+}
+
+.container_logi{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0rem 2rem;
+    margin: 0rem -1rem;
+}
+
+.list_logi{
+    width: calc(100% / 3);
+    padding: 1rem;
+}
+
+.list_logi img{
+    width: 80%;
+    margin: auto;
+}
+
+.list_logi p{
+    margin-top: 0.6rem;
+    text-align: center;
+    padding: 0;
+}
+
+.projet .presentation_projet h3{
+    color:black;
+    padding-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.4rem;
+}
+
+.projet .lien_projet{
+    padding-left: 2rem;
+}
+
+.projet .lien_projet .btn{
+    border: 1px solid #212121;
+    color: #212121;
+    margin-bottom: 1rem;
+    transition-duration: 0.25s;
+}
+
+.projet .lien_projet .btn:hover{
+    background: #212121;
+    color:white;
+    transition-duration: 0.25s;
+}
+
+.projet .lien_projet > div:last-of-type .btn{
+    border: 1px solid #FC4E54;
+    color: #FC4E54;
+    margin-bottom: 1rem;
+    transition-duration: 0.25s;
+}
+
+.projet .lien_projet div:last-of-type .btn:hover{
+    background: #FC4E54;
+    color: white;
+    transition-duration: 0.25s;
 }
 
 /* -------- section plus de projet ------*/
@@ -158,11 +222,57 @@
     transition-duration: 0.25s;
 }
 
+.contenu_projet .btn_voir_projet{
+    display: flex;
+    align-items: center;
+}
+
 .contenu_projet .projet h3{
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
-.contenu_projet .projet i{
-    color: #fff;
+.decouvrir{
+    margin-top: 3rem;
+}
+
+@media (max-width: 1350px){
+    .header_projet h2{
+        font-size: 4rem;
+    }
+
+    .contenu_projet .projet{
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 768px){
+    .header_projet h2{
+        font-size: 3rem;
+    }
+
+    .presentation_projet{
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .presentation_projet div{
+        width: 100%;
+    }
+
+    .presentation_projet .list_logi{
+        width: 50%;
+    }
+
+    .titre_2{
+        font-size: 2rem;
+    }
+
+    .text_deco{
+        font-size: 13vw;
+    }
+
+    .contenu_projet .projet{
+        flex-basis: 100%;
+    }
 }
