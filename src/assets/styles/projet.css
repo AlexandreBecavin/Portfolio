@@ -138,14 +138,14 @@
     transition-duration: 0.25s;
 }
 
-.projet .lien_projet > div:last-of-type .btn{
+.projet .lien_projet .btn.btn_site{
     border: 1px solid #FC4E54;
     color: #FC4E54;
     margin-bottom: 1rem;
     transition-duration: 0.25s;
 }
 
-.projet .lien_projet div:last-of-type .btn:hover{
+.projet .lien_projet .btn.btn_site:hover{
     background: #FC4E54;
     color: white;
     transition-duration: 0.25s;

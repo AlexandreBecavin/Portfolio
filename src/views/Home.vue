@@ -7,14 +7,14 @@
         <div class='container_header'>
           <p class='subtitle'>Salut</p>
           <h2 class='Primary_title'>Je suis alexandre becavin_</h2>
-          <a href='#' class='btn'>Mon cv</a>
+           <a :href="require('../assets/Cv_alexandre2020.pdf')" download="Cv_alexandre2020.pdf" class='btn'>Mon cv</a>
         </div>
         <div class='container-icon'>
           <div class='icon'>
-            <a href='#'><img :src="require('../assets/img/icon/twitter.svg')" alt="Réseau twitter" class='icon_reseau'/></a>
-            <a href='#'><img :src="require('../assets/img/icon/linkedin.svg')" alt="Réseau linkedin" class='icon_reseau'/></a>
-            <a href='#'><img :src="require('../assets/img/icon/github.svg')" alt="Réseau github" class='icon_reseau'/></a>
-            <a href='#'><img :src="require('../assets/img/icon/mail.svg')" alt="Réseau mail" class='icon_reseau'/></a>
+            <a href='https://twitter.com/AlexBecavin' target="_blank"><img :src="require('../assets/img/icon/twitter.svg')" alt="Réseau twitter" class='icon_reseau'/></a>
+            <a href='https://www.linkedin.com/in/alexandre-becavin-2b2a50193/' target="_blank"><img :src="require('../assets/img/icon/linkedin.svg')" alt="Réseau linkedin" class='icon_reseau'/></a>
+            <a href='https://github.com/AlexandreBecavin' target="_blank"><img :src="require('../assets/img/icon/github.svg')" alt="Réseau github" class='icon_reseau'/></a>
+            <a href='mailto:alexandre.becavin@gmail.com' target="_blank"><img :src="require('../assets/img/icon/mail.svg')" alt="Réseau mail" class='icon_reseau'/></a>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
 
       <div class='contenu_pres'>
         <p>Je m'appelle Alexandre, j'ai 19 ans et je suis passionné par le domaine du numérique depuis plusieurs années. C'est pour cela quand entrant au lycée je suis allé en Sti2D option SIN (Système d'information et numérique). Pendant ces années j'ai pu apprendre plusieurs langages tels que python, HTML/CSS, Java. À la fin de ces deux années j'ai eu mon Bac et je me suis orienté vers l'école MyDigitalSchool à Angers. Actuellement en deuxième année de cycle veb et digital. Voilà mon parcours !</P>
-         <img :src="require('../assets/img/carte_de_visite.png')"/>
+         <img :src="require('../assets/img/Carte_de_visite.png')"/>
       </div>
 
     </v-container>
@@ -111,8 +111,10 @@
             <p>alexandre.becavin@gmail.com</p>
             <div class='container-icon'>
               <div class='icon'>
-                <a href='#'><img :src="require('../assets/img/icon/twitter.svg')" alt="Réseau twitter" class='icon_reseau'/></a>
-                <a href='#'><img :src="require('../assets/img/icon/mail.svg')" alt="Mon mail" class='icon_reseau'/></a>
+                <a href='https://twitter.com/AlexBecavin' target="_blank"><img :src="require('../assets/img/icon/twitter.svg')" alt="Réseau twitter" class='icon_reseau'/></a>
+                <a href='https://www.linkedin.com/in/alexandre-becavin-2b2a50193/' target="_blank"><img :src="require('../assets/img/icon/linkedin.svg')" alt="Réseau linkedin" class='icon_reseau'/></a>
+                <a href='https://github.com/AlexandreBecavin' target="_blank"><img :src="require('../assets/img/icon/github.svg')" alt="Réseau github" class='icon_reseau'/></a>
+                <a href='mailto:alexandre.becavin@gmail.com' target="_blank"><img :src="require('../assets/img/icon/mail.svg')" alt="Réseau mail" class='icon_reseau'/></a>
               </div>
             </div>
           </div>
@@ -156,6 +158,11 @@ export default {
           lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
           titre: 'La Rencontre',
           lien_btn: 'La_rencontre'
+        },
+        {
+          lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
+          titre: "Student lab'",
+          lien_btn: 'Student_lab'
         },
       ],  
 

@@ -164,6 +164,8 @@ Section presentation
     transform: rotate(-10deg);
     width: auto;
     margin: auto;
+    max-height: 250px;
+    max-width: 90%;
 }
 
 .lien_section{

@@ -32,8 +32,13 @@
         </div>
         <div class="lien_projet">
           <div v-for="(btn, i) in projet.bouton_plus" :key="i" target="_blank">
-            <!--download-->
-            <a v-bind:href="btn.lien_btn" class='btn' target="_blank">{{btn.titre_btn}}</a>
+ 
+            <a v-if="btn.lien_site == 'false'" target="_blank" :href="btn.lien_btn" :download="btn.titre" class='btn btn2'>{{btn.titre_btn}}</a>
+
+            <a v-else v-bind:href="btn.lien_btn" class='btn btn_site' target="_blank">{{btn.titre_btn}}</a>
+
+            
+
           </div> 
         </div>
       </div>
@@ -117,8 +122,16 @@ export default {
               ],
               bouton_plus:[
                 {
+                  titre_btn: 'Téléchager le projet',
+                  lien_btn: 'https://github.com/AlexandreBecavin/Portfolio',
+                  lien_site: 'false',
+                  titre: 'Portfolio',
+                },
+                {
                   titre_btn: 'Voir le site',
                   lien_btn: 'https://alexandrebecavin.netlify.app/',
+                  lien_site: 'true',
+                  titre: 'portfolio',
                 },
               ],
 
@@ -132,6 +145,11 @@ export default {
                   lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
                   titre: 'La Rencontre',
                   lien_btn: 'La_rencontre'
+                },
+                {
+                  lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
+                  titre: "Student lab'",
+                  lien_btn: 'Student_lab'
                 },
               ]
             },
@@ -182,6 +200,8 @@ export default {
                 {
                   titre_btn: 'Voir le site',
                   lien_btn: 'https://www.briquestore.fr/fr/',
+                  lien_site: 'true',
+                  titre: 'Briquestore',
                 },
               ],
 
@@ -195,6 +215,11 @@ export default {
                   lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
                   titre: 'La Rencontre',
                   lien_btn: 'La_rencontre'
+                },
+                {
+                  lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
+                  titre: "Student lab'",
+                  lien_btn: 'Student_lab'
                 },
               ]
             },
@@ -239,14 +264,17 @@ export default {
               bouton_plus:[
                 {
                   titre_btn: 'Telecharger le dossier',
-                  lien_btn: 'assets/dossier_projet/La_rencontre.zip',
+                  lien_btn: require('../assets/dossier_projet/La_rencontre.zip'),
+                  lien_site: 'false',
+                  titre: 'La_rencontre.zip',
                 },
                 {
                   titre_btn: 'Voir le site',
                   lien_btn: '#',
+                  lien_site: 'true',
+                  titre: 'La rencontre',
                 },
               ],
-
               List_projet:[
                 {
                   lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
@@ -258,8 +286,84 @@ export default {
                   titre: 'Briquestore',
                   lien_btn: 'Briquestore'
                 },
+                {
+                  lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
+                  titre: "Student lab'",
+                  lien_btn: 'Student_lab'
+                },
               ]
             },
+
+            Student_lab:
+            {
+              img_presentation: require('../assets/img/projet/Student_lab/bg_student_lab.webp'),
+              alt_img_presentation: "Image Page d'accueil student lab'",
+              Titre: "Student lab'",
+              img_projet: require('../assets/img/projet/Student_lab/img_student_lab.webp'),
+              alt_projet: "Image du site student lab'",
+              presentation: "Student lab’ est challenge inter école. Le site devait mettre en avant les projets étudiants. Par groupe de 4 étudiants nous avions 1 semaines pour réaliser un site qui correspond à leur demande. C’est-à-dire mettre en avant les projets étudiants, un site accessible pour tous les handicapes, un site UX et UI.",
+              Annee: '2020',
+              Client: 'Étude',
+              Mission: '<b>Graphisme :</b><ul><li>Création de maquettes fonctionnelles</li><li>Création de maquettes graphiques</li></ul><b>Développement</b><ul><li>Intégration des pages (HTML, CSS, JS)</li><li>Site accessible pour tous les utilisateurs</li></ul><b>Gestion de projet</b><ul><li>Gestion du trello</li><li>Gestion de la partie développement de mon groupe</li></ul><b>Résultat</b><ul><li>Arrivé 2ème lors des résultats de l’école mais sélectionné par l’école.</li></ul>',
+              logiciel:[
+                {
+                  img_logiciel: require('../assets/img/outils/trello.webp'),
+                  titre_logiciel: 'Trello',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Illustrator.webp'),
+                  titre_logiciel: 'Adobe illustrator',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Xd.webp'),
+                  titre_logiciel: 'Adobe xd',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Html.webp'),
+                  titre_logiciel: 'Html',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Css.webp'),
+                  titre_logiciel: 'Css',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/javascript.webp'),
+                  titre_logiciel: 'Javasript',
+                },
+              ],
+              bouton_plus:[
+                {
+                  titre_btn: 'Telecharger le dossier',
+                  lien_btn: require("../assets/dossier_projet/Student_lab.zip"),
+                  lien_site: 'false',
+                  titre: "Student_lab.zip",
+                },
+                {
+                  titre_btn: 'Voir le site',
+                  lien_btn: '#',
+                  lien_site: 'true',
+                  titre: 'Student lab',
+                },
+              ],
+              List_projet:[
+                {
+                  lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
+                  titre: 'Portfolio',
+                  lien_btn: 'Portfolio'
+                },
+                {
+                  lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
+                  titre: 'Briquestore',
+                  lien_btn: 'Briquestore'
+                },
+                {
+                  lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
+                  titre: 'La Rencontre',
+                  lien_btn: 'La_rencontre'
+                },
+              ]
+            },
+
       }
   },
 
@@ -290,6 +394,8 @@ export default {
         return this.Briquestore;
       }else if(msg == 'La_rencontre'){
         return this.La_rencontre;
+      }else if(msg == 'Student_lab'){
+        return this.Student_lab;
       }
     },
   }
