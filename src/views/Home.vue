@@ -32,7 +32,7 @@
 
       <div class='contenu_pres'>
         <p>Je m'appelle Alexandre, j'ai 19 ans et je suis passionné par le domaine du numérique depuis plusieurs années. C'est pour cela quand entrant au lycée je suis allé en Sti2D option SIN (Système d'information et numérique). Pendant ces années j'ai pu apprendre plusieurs langages tels que python, HTML/CSS, Java. À la fin de ces deux années j'ai eu mon Bac et je me suis orienté vers l'école MyDigitalSchool à Angers. Actuellement en deuxième année de cycle veb et digital. Voilà mon parcours !</P>
-         <img :src="require('../assets/img/Carte_de_visite.png')"/>
+         <img :src="require('../assets/img/Carte_de_visite.webp')" rel="preload"/>
       </div>
 
     </v-container>
@@ -61,23 +61,19 @@
 
         <div class='contenu_projet'>
             <div v-for="(projet, i) in List_projet" :key="i" class="projet" target="_blank">
-              <img :src="projet.lien_image" class='img_projet'/>
+              <img :src="projet.lien_image" class='img_projet' rel="preload"/>
               <div class='detail_projet'>
                 <div>
                   <h3>{{projet.titre}}</h3>
-                  <router-link :to="`/projet/${projet.lien_btn}`"><img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau'/>Voir le projet</router-link>
+                  <router-link :to="`/projet/${projet.lien_btn}`"><img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau' rel="preload"/>Voir le projet</router-link>
                 </div>
               </div>
             </div>
         </div>
-        
-
-          <!--<img :src="require('../assets/img/projet/IMEA_portfolio.png')" alt=""/>
-          <router-link :to="{ name: 'projet', params: { msg } }"> Go to your profile</router-link>-->
       </div>
     </v-container>
 
-
+    <!--
     <div class='block_dark lien_section' id='contact'>
       <v-container >
 
@@ -121,8 +117,8 @@
         </div>
 
       </v-container>
-    </div>
-
+    </div>-->
+    <footerReseau/>
 
   </div>
 </template>
@@ -130,6 +126,7 @@
 <script>
 import competences from '../components/competences.vue'
 import Titre from '../components/titre.vue'
+import footerReseau from '../components/footerReseau.vue'
 
 //import listProjet from '../components/listProjet.vue'
 
@@ -139,8 +136,10 @@ export default {
   components: {
     competences,
     Titre,
+    footerReseau,
     //listProjet,
   },
+  
 
    data: () => ({
       List_projet: [
@@ -163,6 +162,11 @@ export default {
           lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
           titre: "Student lab'",
           lien_btn: 'Student_lab'
+        },
+        {
+          lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
+          titre: 'QG-Amboise',
+          lien_btn: 'QG_amboise'
         },
       ],  
 

@@ -244,3 +244,42 @@ header .hamburger.close span:first-child{
         padding-left: 0;
     }
 }
+
+/*----------------
+Footer
+----------------*/
+
+.section_footer .lien_contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section_footer .lien_contact li{
+    margin: 1rem 2rem;
+}
+
+.section_footer .lien_contact a{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0rem;
+}
+
+.section_footer .lien_contact a img{
+    margin-right: 1rem
+}
+
+.section_footer p{
+    text-align: center;
+}
+
+.Copyright{
+    padding-top: 1rem;
+    color: #b7b7b7; 
+}
+
+@media (max-width: 768px){
+    .section_footer .lien_contact{
+        display: block;
+    }
+}

@@ -30,5 +30,5 @@ export default {
 
 <style lang="scss">
     // style menu
-    @import './assets/styles/Menustyle.css';
+    @import './assets/styles/header_footer.css';
 </style>

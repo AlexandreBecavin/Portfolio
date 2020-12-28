@@ -64,6 +64,8 @@
       </div>
     </div>
 
+    <footerReseau/>
+
   </div>
 
 </template>
@@ -75,12 +77,14 @@
 
 <script>
 import Titre from '../components/titre.vue'
+import footerReseau from '../components/footerReseau.vue'
 
 export default {
   name: 'projet',
 
   components: {
     Titre,
+    footerReseau,
   },
 
   data() {
@@ -97,7 +101,7 @@ export default {
               presentation: "Mon portfolio est un projet créé en 3 semaines, mise à jour régulièrement que ce soit contenu ou code. Son objectif est de promouvoir mes compétences sur des personnes ou une entreprise. Il a comme but de m’aider dans ma recherche de stage et d'alternance.",
               Annee: '2020',
               Client: 'Personnel',
-              Mission: "<b>Graphisme :</b><ul><li>Création d'identité visuelle (typo, couleur, logo).</li><li>Création du zoning du site.</li><li>Création des maquettes fonctionnelles.</li><li>Création des maquettes graphiques.</li></ul><b>Développement :</b> <ul><li>Développement du site sous Vuejs.</li><li>Hébergement du site sur Netlify.</li><li>Optimisation des performances du site.</li></ul><b>Contenu :</b><ul><li>Rédaction des contenus.</li><li>Création des mockup pour les images.</li><li>Conversion des images en webp.</li></ul>",
+              Mission: "<b>Graphisme :</b><ul><li>Création d'identité visuelle (typo, couleur, logo).</li><li>Création du zoning du site.</li><li>Création des maquettes fonctionnelles.</li><li>Création des maquettes graphiques.</li></ul><b>Développement :</b> <ul><li>Développement du site sous Vuejs.</li><li>Site responsive</li><li>Optimisation des performances du site.</li><li>Hébergement du site sur Netlify.</li></ul><b>Contenu :</b><ul><li>Rédaction des contenus.</li><li>Création des mockup pour les images.</li><li>Conversion des images en webp.</li></ul>",
               logiciel:[
                 {
                   img_logiciel: require('../assets/img/outils/Xd.webp'),
@@ -164,7 +168,7 @@ export default {
               presentation: "Briquestore est un projet réalisé durant mon stage chez ACWD. Le projet s'est étalé sur une durée de 2 mois. Le contrat de l'entreprise ACWD était une refonte du site de Briquestore (site e-commerce de Lego). L'objectif était de migrer le prestashop 1.6 du site en 1.7 tout en gardant le design actuel.",
               Annee: '2020',
               Client: 'Briquestore',
-              Mission: "<b>Développement :</b><br><ul><li>Programme PHP, SQL pour exporter les produits du prestashop 1.6 vers 1.7</li><li>Développement du thème personnaliser 1.6 en 1.7</li><li>Modification du back office</li></u><b>Gestion de projet :</b><br><ul><li>diagramme de GANTT</li><li>réunion avec le client</li></ul><b>Résultat :</b><br><ul><li>Le site était fini a 90% avant la fin de mon stage et l'entreprise était content de mon travail.</ul></li>",
+              Mission: "<b>Développement :</b><br><ul><li>Programme PHP, SQL pour exporter les produits du prestashop 1.6 vers 1.7</li><li>Développement du thème personnaliser 1.6 en 1.7</li><li>Modification du back office</li></ul><b>Gestion de projet :</b><br><ul><li>diagramme de GANTT</li><li>réunion avec le client</li></ul><b>Résultat :</b><br><ul><li>Le site était fini a 90% avant la fin de mon stage et l'entreprise était content de mon travail.</li></ul>",
               logiciel:[
                 {
                   img_logiciel: require('../assets/img/outils/drive.webp'),
@@ -207,19 +211,24 @@ export default {
 
               List_projet:[
                 {
+                  lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
+                  titre: 'QG-Amboise',
+                  lien_btn: 'QG_amboise'
+                },
+                {
                   lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
                   titre: 'Portfolio',
                   lien_btn: 'Portfolio'
                 },
                 {
-                  lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
-                  titre: 'La Rencontre',
-                  lien_btn: 'La_rencontre'
-                },
-                {
                   lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
                   titre: "Student lab'",
                   lien_btn: 'Student_lab'
+                },
+                {
+                  lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
+                  titre: 'La Rencontre',
+                  lien_btn: 'La_rencontre'
                 },
               ]
             },
@@ -291,6 +300,11 @@ export default {
                   titre: "Student lab'",
                   lien_btn: 'Student_lab'
                 },
+                {
+                  lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
+                  titre: 'QG-Amboise',
+                  lien_btn: 'QG_amboise'
+                },
               ]
             },
 
@@ -304,7 +318,7 @@ export default {
               presentation: "Student lab’ est challenge inter école. Le site devait mettre en avant les projets étudiants. Par groupe de 4 étudiants nous avions 1 semaines pour réaliser un site qui correspond à leur demande. C’est-à-dire mettre en avant les projets étudiants, un site accessible pour tous les handicapes, un site UX et UI.",
               Annee: '2020',
               Client: 'Étude',
-              Mission: '<b>Graphisme :</b><ul><li>Création de maquettes fonctionnelles</li><li>Création de maquettes graphiques</li></ul><b>Développement</b><ul><li>Intégration des pages (HTML, CSS, JS)</li><li>Site accessible pour tous les utilisateurs</li></ul><b>Gestion de projet</b><ul><li>Gestion du trello</li><li>Gestion de la partie développement de mon groupe</li></ul><b>Résultat</b><ul><li>Arrivé 2ème lors des résultats de l’école mais sélectionné par l’école.</li></ul>',
+              Mission: '<b>Graphisme :</b><ul><li>Création de maquettes fonctionnelles</li><li>Création de maquettes graphiques</li></ul><b>Développement</b><ul><li>Intégration des pages (HTML, CSS, JS)</li><li>Site accessible pour tous les utilisateurs</li></ul><b>Gestion de projet</b><ul><li>Gestion du trello</li><li>Gestion de la partie développement de mon groupe</li></ul><b>Résultat</b><ul><li>Arrivé 2ème lors des résultats du jury mais sélectionné par l’école.</li></ul>',
               logiciel:[
                 {
                   img_logiciel: require('../assets/img/outils/trello.webp'),
@@ -332,6 +346,12 @@ export default {
                 },
               ],
               bouton_plus:[
+                {
+                  titre_btn: 'Presentation du projet en video',
+                  lien_btn: 'https://www.youtube.com/watch?v=3alVNhxstC4&feature=youtu.be',
+                  lien_site: 'false',
+                  titre: "Student_lab video",
+                },
                 {
                   titre_btn: 'Telecharger le dossier',
                   lien_btn: require("../assets/dossier_projet/Student_lab.zip"),
@@ -361,8 +381,84 @@ export default {
                   titre: 'La Rencontre',
                   lien_btn: 'La_rencontre'
                 },
+                {
+                  lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
+                  titre: 'QG-Amboise',
+                  lien_btn: 'QG_amboise'
+                },
               ]
             },
+
+            QG_amboise:
+            {
+              img_presentation: require('../assets/img/projet/QG-Amboise/bg_QG-amboise.webp'),
+              alt_img_presentation: "Image Page d'accueil QG-Amboise",
+              Titre: "QG-Amboise",
+              img_projet: require('../assets/img/projet/QG-Amboise/img_QG-amboise.webp'),
+              alt_projet: "Image du site QG-Amboise",
+              presentation: "QG-Amboise est un projet conçu pendant mon stage chez ACWD. Le projet à durée environ 1 mois. L’objectif était de concevoir le site sous WordPress en respectant les maquettes reçus d’une autre entreprise (La graffinerie).",
+              Annee: '2020',
+              Client: 'QG-Amboise',
+              Mission: '<b>Développement :</b><br><ul><li>Création d’un thème personnalisé</li><li>Contenu modifiable via des liens ACF </li><li>Site responsive</li></ul><b>Résultat :</b><br><ul><li>Site terminé et mise en ligne pendant mon stage. </li><li>Client satisfait</li><ul>',
+              logiciel:[
+                {
+                  img_logiciel: require('../assets/img/outils/trello.webp'),
+                  titre_logiciel: 'Trello',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/drive.webp'),
+                  titre_logiciel: 'Google drive',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Wordpress.webp'),
+                  titre_logiciel: 'Wordpress',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Html.webp'),
+                  titre_logiciel: 'Html',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/Css.webp'),
+                  titre_logiciel: 'Css',
+                },
+                {
+                  img_logiciel: require('../assets/img/outils/javascript.webp'),
+                  titre_logiciel: 'Javasript',
+                },
+              ],
+              bouton_plus:[
+                {
+                  titre_btn: 'Voir le site',
+                  lien_btn: 'https://qg-amboise.fr/',
+                  lien_site: 'true',
+                  titre: 'QG-Amboise',
+                },
+              ],
+              List_projet:[
+                {
+                  lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
+                  titre: 'Briquestore',
+                  lien_btn: 'Briquestore'
+                },
+                {
+                  lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
+                  titre: 'Portfolio',
+                  lien_btn: 'Portfolio'
+                },               
+                {
+                  lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
+                  titre: 'La Rencontre',
+                  lien_btn: 'La_rencontre'
+                },
+                {
+                  lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
+                  titre: "Student lab'",
+                  lien_btn: 'Student_lab'
+                },
+              ]
+            },
+
+
 
       }
   },
@@ -396,6 +492,8 @@ export default {
         return this.La_rencontre;
       }else if(msg == 'Student_lab'){
         return this.Student_lab;
+      }else if(msg == 'QG_amboise'){
+        return this.QG_amboise;
       }
     },
   }
