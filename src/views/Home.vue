@@ -177,6 +177,15 @@ export default {
 
     }),
 
+    metaInfo () {
+      return {
+        title: 'Portfolio de Alexandre BECAVIN - Développeur Web & Webdesigner',
+        meta: [
+          { vmid: 'description', name: 'description', content: "Bienvenu, Portfolio d'Alexandre BECAVIN. Vous pourrez décuvrir mes projets et mes compétences." }
+        ]
+      }
+    },
+
 };
 </script>
 
