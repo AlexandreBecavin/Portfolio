@@ -5,7 +5,7 @@
       <div class='text_flex'>
         <div></div>
         <div class='container_header'>
-          <p class='subtitle'>Salut</p>
+          <p class='subtitle'>Bonjour,</p>
           <h2 class='Primary_title'>Je suis alexandre becavin_</h2>
            <a :href="require('../assets/Cv_alexandre2020.pdf')" download="Cv_alexandre2020.pdf" class='btn'>Mon cv</a>
         </div>
@@ -181,7 +181,11 @@ export default {
       return {
         title: 'Portfolio de Alexandre BECAVIN - Développeur Web & Webdesigner',
         meta: [
-          { vmid: 'description', name: 'description', content: "Bienvenu, Portfolio d'Alexandre BECAVIN. Vous pourrez décuvrir mes projets et mes compétences." }
+          { vmid: 'description', name: 'description', content: "Bienvenu, Portfolio d'Alexandre BECAVIN. Vous pourrez décuvrir mes projets et mes compétences." },
+          { property: 'og:title', content: "Portfolio de Alexandre BECAVIN - Développeur Web & Webdesigner"},
+          { property: 'og:site_name', content: 'Alexandre_BECAVIN'},
+          {property: 'og:type', content: 'website'},    
+          {name: 'robots', content: 'index,follow'} 
         ]
       }
     },

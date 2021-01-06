@@ -474,7 +474,11 @@ export default {
     return {
       title: this.projet.title,
       meta: [
-        { vmid: 'description', name: 'description', content: this.projet.description }
+        { vmid: 'description', name: 'description', content: this.projet.description },
+        { property: 'og:title', content: this.projet.title},
+        { property: 'og:site_name', content: 'Alexandre_BECAVIN'},
+        {property: 'og:type', content: 'website'},    
+        {name: 'robots', content: 'index,follow'} 
       ]
     }
   },
