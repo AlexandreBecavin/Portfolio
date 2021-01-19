@@ -265,9 +265,10 @@ Section Projet
     margin-bottom: 0.5rem;
 }
 
-.contenu_projet .projet a{
+.contenu_projet .projet .voir_projet{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 

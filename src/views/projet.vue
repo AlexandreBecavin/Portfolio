@@ -53,12 +53,17 @@
         <div class='contenu_projet'>
           <div v-for="(info_projet, i) in projet.List_projet" :key="i" class="projet" target="_blank">
             <img :src="info_projet.lien_image" class='img_projet'/>
-            <div class='detail_projet'>
-              <div>
-                <h3>{{info_projet.titre}}</h3>
-                <router-link :to="{ name: 'projet', params: { msg: info_projet.lien_btn }}"><img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau'/>Voir le projet</router-link>
+            <router-link :to="{ name: 'projet', params: { msg: info_projet.lien_btn }}">
+              <div class='detail_projet'>
+                <div>
+                  <h3>{{info_projet.titre}}</h3>
+                  <div class='voir_projet'>
+                    <img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau'/>
+                    <p>Voir le projet</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -79,6 +84,7 @@
 import Titre from '../components/titre.vue'
 import footerReseau from '../components/footerReseau.vue'
 
+let ROOT_PATH = 'https://alexandrebecavin.netlify.app';
 export default {
   name: 'projet',
 
@@ -91,10 +97,13 @@ export default {
     return {
       projet: 'Portfolio',
       titre1: 'À Découvrir_',
-      Portfolio:
+      portfolio:
       {
         title: 'Portfolio | Projet | Alexandre BECAVIN',
         description: 'Je vous présente la création de mon portfolio. Venez decourir mes compétences acquises et utilisées',
+        url: ROOT_PATH + '/projet/portfolio',
+        og_image: ROOT_PATH + require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
+
         img_presentation: require('../assets/img/projet/Portfolio/bg_portfolio.webp'),
         alt_img_presentation: 'Image portfolio',
         Titre: 'Portfolio',
@@ -145,25 +154,33 @@ export default {
           {
             lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
             titre: 'Briquestore',
-            lien_btn: 'Briquestore'
+            lien_btn: 'briquestore'
           },
           {
             lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
             titre: 'La Rencontre',
-            lien_btn: 'La_rencontre'
+            lien_btn: 'la_rencontre'
           },
           {
             lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
             titre: "Student lab'",
-            lien_btn: 'Student_lab'
+            lien_btn: 'student_lab'
+          },
+           {
+            lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
+            titre: 'QG-Amboise',
+            lien_btn: 'qg_amboise'
           },
         ]
       },
       
-      Briquestore:
+      briquestore:
       {
         title: 'Briquestore | Projet | Alexandre BECAVIN',
         description: 'Je vous présente la création du site briquestore réaliser durant mon stage chez ACWD.',
+        url: ROOT_PATH + '/projet/briquestore',
+        og_image: ROOT_PATH + require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
+
         img_presentation: require('../assets/img/projet/Briquestore/bg_Briquestore.webp'),
         alt_img_presentation: 'Image portfolio',
         Titre: 'Briquestore',
@@ -217,30 +234,33 @@ export default {
           {
             lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
             titre: 'QG-Amboise',
-            lien_btn: 'QG_amboise'
+            lien_btn: 'qg_amboise'
           },
           {
             lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
             titre: 'Portfolio',
-            lien_btn: 'Portfolio'
+            lien_btn: 'portfolio'
           },
           {
             lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
             titre: "Student lab'",
-            lien_btn: 'Student_lab'
+            lien_btn: 'student_lab'
           },
           {
             lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
             titre: 'La Rencontre',
-            lien_btn: 'La_rencontre'
+            lien_btn: 'la_rencontre'
           },
         ]
       },
 
-      La_rencontre:
+      la_rencontre:
       {
         title: 'La rencontre | Projet | Alexandre BECAVIN',
         description: 'Je vous présente la création du site La rencontre réaliser durant mes partiels de première année.',
+        url: ROOT_PATH + '/projet/la_rencontre',
+        og_image: ROOT_PATH + require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
+
         img_presentation: require('../assets/img/projet/La_rencontre/bg_LaRencontre.webp'),
         alt_img_presentation: 'Image portfolio',
         Titre: 'La Rencontre',
@@ -283,41 +303,38 @@ export default {
             lien_site: 'false',
             titre: 'La_rencontre.zip',
           },
-          {
-            titre_btn: 'Voir le site',
-            lien_btn: '#',
-            lien_site: 'true',
-            titre: 'La rencontre',
-          },
         ],
         List_projet:[
           {
             lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
             titre: 'Portfolio',
-            lien_btn: 'Portfolio'
+            lien_btn: 'portfolio'
           },
           {
             lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
             titre: 'Briquestore',
-            lien_btn: 'Briquestore'
+            lien_btn: 'briquestore'
           },
           {
             lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
             titre: "Student lab'",
-            lien_btn: 'Student_lab'
+            lien_btn: 'student_lab'
           },
           {
             lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
             titre: 'QG-Amboise',
-            lien_btn: 'QG_amboise'
+            lien_btn: 'qg_amboise'
           },
         ]
       },
 
-      Student_lab:
+      student_lab:
       {
         title: "Sudent lab' | Projet | Alexandre BECAVIN",
         description: "Je vous présente la création du site Student lab' réaliser durant un challenge inter-école.",
+        url: ROOT_PATH + '/projet/student_lab',
+        og_image: ROOT_PATH + require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
+
         img_presentation: require('../assets/img/projet/Student_lab/bg_student_lab.webp'),
         alt_img_presentation: "Image Page d'accueil student lab'",
         Titre: "Student lab'",
@@ -366,41 +383,38 @@ export default {
             lien_site: 'false',
             titre: "Student_lab.zip",
           },
-          {
-            titre_btn: 'Voir le site',
-            lien_btn: '#',
-            lien_site: 'true',
-            titre: 'Student lab',
-          },
         ],
         List_projet:[
           {
             lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
             titre: 'Portfolio',
-            lien_btn: 'Portfolio'
+            lien_btn: 'portfolio'
           },
           {
             lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
             titre: 'Briquestore',
-            lien_btn: 'Briquestore'
+            lien_btn: 'briquestore'
           },
           {
             lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
             titre: 'La Rencontre',
-            lien_btn: 'La_rencontre'
+            lien_btn: 'la_rencontre'
           },
           {
             lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
             titre: 'QG-Amboise',
-            lien_btn: 'QG_amboise'
+            lien_btn: 'qg_amboise'
           },
         ]
       },
 
-      QG_amboise:
+      qg_amboise:
       {
         title: "QG-Amboise' | Projet | Alexandre BECAVIN",
         description: "Je vous présente la création du site QG-Amboise réaliser durant mon stage chez ACWD.",
+        url: ROOT_PATH + '/projet/qg_amboise',
+        og_image: ROOT_PATH + require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
+        
         img_presentation: require('../assets/img/projet/QG-Amboise/bg_QG-amboise.webp'),
         alt_img_presentation: "Image Page d'accueil QG-Amboise",
         Titre: "QG-Amboise",
@@ -448,22 +462,22 @@ export default {
           {
             lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
             titre: 'Briquestore',
-            lien_btn: 'Briquestore'
+            lien_btn: 'briquestore'
           },
           {
             lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
             titre: 'Portfolio',
-            lien_btn: 'Portfolio'
+            lien_btn: 'portfolio'
           },               
           {
             lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
             titre: 'La Rencontre',
-            lien_btn: 'La_rencontre'
+            lien_btn: 'la_rencontre'
           },
           {
             lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
             titre: "Student lab'",
-            lien_btn: 'Student_lab'
+            lien_btn: 'student_lab'
           },
         ]
       },
@@ -477,7 +491,9 @@ export default {
         { vmid: 'description', name: 'description', content: this.projet.description },
         { property: 'og:title', content: this.projet.title},
         { property: 'og:site_name', content: 'Alexandre_BECAVIN'},
-        {property: 'og:type', content: 'website'},    
+        { property: 'og:type', content: 'website'},  
+        { property: 'og:url', content: this.projet.url},   
+        { property: 'og:image', content: this.projet.og_image},  
         {name: 'robots', content: 'index,follow'} 
       ]
     }
@@ -504,16 +520,16 @@ export default {
 
   methods:{
     persist(msg) {
-      if(msg == 'Portfolio'){
-        return this.Portfolio;
-      }else if(msg == 'Briquestore'){
-        return this.Briquestore;
-      }else if(msg == 'La_rencontre'){
-        return this.La_rencontre;
-      }else if(msg == 'Student_lab'){
-        return this.Student_lab;
-      }else if(msg == 'QG_amboise'){
-        return this.QG_amboise;
+      if(msg == 'portfolio'){
+        return this.portfolio;
+      }else if(msg == 'briquestore'){
+        return this.briquestore;
+      }else if(msg == 'la_rencontre'){
+        return this.la_rencontre;
+      }else if(msg == 'student_lab'){
+        return this.student_lab;
+      }else if(msg == 'qg_amboise'){
+        return this.qg_amboise;
       }
     },
   }
