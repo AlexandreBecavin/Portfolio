@@ -5,7 +5,7 @@
       <div class='text_flex'>
         <div></div>
         <div class='container_header'>
-          <p class='subtitle'>Salut</p>
+          <p class='subtitle'>Bonjour,</p>
           <h2 class='Primary_title'>Je suis alexandre becavin_</h2>
            <a :href="require('../assets/Cv_alexandre2020.pdf')" download="Cv_alexandre2020.pdf" class='btn'>Mon cv</a>
         </div>
@@ -60,15 +60,20 @@
       <div class='test'>
 
         <div class='contenu_projet'>
-            <div v-for="(projet, i) in List_projet" :key="i" class="projet" target="_blank">
-              <img :src="projet.lien_image" class='img_projet' rel="preload"/>
+          <div v-for="(projet, i) in List_projet" :key="i" class="projet" target="_blank">
+            <img :src="projet.lien_image" class='img_projet' rel="preload"/>
+            <router-link :to="`/projet/${projet.lien_btn}`">
               <div class='detail_projet'>
                 <div>
                   <h3>{{projet.titre}}</h3>
-                  <router-link :to="`/projet/${projet.lien_btn}`"><img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau' rel="preload"/>Voir le projet</router-link>
+                  <div class='voir_projet'>
+                    <img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau' rel="preload"/>
+                    <p>Voir le projet</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </router-link>
+          </div>
         </div>
       </div>
     </v-container>
@@ -129,6 +134,7 @@ import Titre from '../components/titre.vue'
 import footerReseau from '../components/footerReseau.vue'
 
 //import listProjet from '../components/listProjet.vue'
+let ROOT_PATH = 'https://alexandrebecavin.netlify.app';
 
 export default {
   name: 'Home',
@@ -146,27 +152,27 @@ export default {
         {
           lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
           titre: 'Portfolio',
-          lien_btn: 'Portfolio'
+          lien_btn: 'portfolio'
         },
         {
           lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
           titre: 'Briquestore',
-          lien_btn: 'Briquestore'
+          lien_btn: 'briquestore'
         },
         {
           lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
           titre: 'La Rencontre',
-          lien_btn: 'La_rencontre'
+          lien_btn: 'la_rencontre'
         },
         {
           lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
           titre: "Student lab'",
-          lien_btn: 'Student_lab'
+          lien_btn: 'student_lab'
         },
         {
           lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
           titre: 'QG-Amboise',
-          lien_btn: 'QG_amboise'
+          lien_btn: 'qg_amboise'
         },
       ],  
 
@@ -176,6 +182,21 @@ export default {
       titre4: 'Me contacter_',
 
     }),
+
+    metaInfo () {
+      return {
+        title: 'Portfolio de Alexandre BECAVIN - Développeur Web & Webdesigner',
+        meta: [
+          { vmid: 'description', name: 'description', content: "Bienvenue sur le portfolio d'Alexandre BECAVIN. Venez consulter et découvrir mes projets et mes compétences." },
+          { property: 'og:title', content: "Portfolio de Alexandre BECAVIN - Développeur Web & Webdesigner"},
+          { property: 'og:site_name', content: 'Alexandre_BECAVIN'},
+          { property: 'og:type', content: 'website'},  
+          { property: 'og:url', content: 'https://alexandrebecavin.netlify.app/'},   
+          { property: 'og:image', content: ROOT_PATH + require('../assets/img/projet/Portfolio/IMEA_portfolio.webp')},   
+          { name: 'robots', content: 'index,follow'} 
+        ]
+      }
+    },
 
 };
 </script>
