@@ -23,10 +23,9 @@ export default {
   name: 'App',
   components: {
     headerMenu,
-  }
+  },
 }
 </script>
-
 
 <style lang="scss">
     // style menu

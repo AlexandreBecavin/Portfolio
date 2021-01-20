@@ -198,8 +198,26 @@ export default {
       }
     },
 
+    mounted(){
+
+      const intersectionClassHandler = el => el.isIntersecting ? el.target.classList.add('visible') : el.target.classList.remove('visible');
+
+      const handleIntersect = entries => entries.forEach(el => intersectionClassHandler(el));
+
+      const intersectionSettings = {
+        root: null,
+        rootMargin: "-10%"
+      }
+
+      const io = new IntersectionObserver(handleIntersect, intersectionSettings);
+      document.querySelectorAll('.titre_section').forEach(el => io.observe(el));
+
+
+    }
+
 };
 </script>
+
 
 <!--<script src="https://kit.fontawesome.com/fd0ac913f8.js" crossorigin="anonymous"></script>-->
 

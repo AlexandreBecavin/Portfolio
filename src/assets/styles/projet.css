@@ -162,6 +162,15 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
+    opacity: 0;
+    transform: translateX(50vw);
+    transition-duration: 1s;
+}
+
+.titre_section.visible{
+    transform: translateX(0);
+    opacity: 1;
+    transition-duration: 1s;
 }
 
 .list_projet .text_deco{

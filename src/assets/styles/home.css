@@ -34,6 +34,8 @@ Header page
 
 .container_header{
     width: 50%;
+    animation-name: apparitionTexte;
+    animation-duration: 2s;
 }
 
 .container_header .subtitle{
@@ -117,6 +119,12 @@ Header page
     100% { transform: translateY(10px); opacity: 0;}
 }
 
+@keyframes apparitionTexte {
+    0% { transform: translateY(-200px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1;}
+}
+
+
 
 /* ---------------------
 Section presentation
@@ -126,6 +134,15 @@ Section presentation
     display: flex;
     align-items: center;
     white-space: nowrap;
+    opacity: 0;
+    transform: translateX(50vw);
+    transition-duration: 1s;
+}
+
+.titre_section.visible{
+    transform: translateX(0);
+    opacity: 1;
+    transition-duration: 1s;
 }
 
 .text_deco{

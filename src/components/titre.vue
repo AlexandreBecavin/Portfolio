@@ -12,8 +12,7 @@
     data: () => ({
      
     }),
-    props: ['Titre']
-
+    props: ['Titre'],
   }
 </script>
 
