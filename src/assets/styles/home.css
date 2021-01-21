@@ -206,36 +206,47 @@ Section Compétences
 .contenu_competences{
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 7rem;
+    margin-bottom: 8rem;
+    margin-top: 3rem;
 }
 
 .contenu_competences .competence{
-    margin: 3.2rem 0rem;
-    flex-basis: 25%;
+    margin: 5rem 0rem;
+    width: 25%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    
 }
 
-.contenu_competences .competence .v-progress-circular{
-    width: 10vw !important;
-    height: 10vw !important;
-
+.contenu_competences .competence .carte{
+    background-color: #2D2D2D;
+    border-radius: 0 0 20px 20px;
+    margin: 0rem 2rem;
+    padding: 0rem 1rem;
+    max-width: 350px;
+    width: 100%;
 }
 
-.contenu_competences .competence .v-progress-circular__underlay{
-    stroke: white;
+.contenu_competences .carte .icon_competence{
+    width: 50%;
+    height: auto;
+    transform: translateY(-50%);
+    margin: auto;
 }
 
-.contenu_competences .competence .v-progress-circular__info{
-    color: white;
-    font-size: 2rem;
-    font-family: "cargo";
+.contenu_competences .carte .titre_carte{
+    transform: translateY(-10px);
+    font-family: "Cargo";
+    font-size: 1rem;
+    text-align: left;
 }
 
-.contenu_competences .competence p{
-    margin-top: 3px;
-    font-size: 1.5rem;
+.contenu_competences .carte .niveau{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
 }
-
 /* ---------------------
 Section Projet
 ----------------------*/
@@ -359,13 +370,8 @@ Section contact
     }
 
     .contenu_competences .competence{
-        flex-basis: 50%;
+        width: 50%;
 
-    }
-
-    .contenu_competences .competence .v-progress-circular{
-        width: 25vw !important;
-        height: 25vw !important;
     }
 
     .contenu_projet .projet{
@@ -391,15 +397,6 @@ Section contact
         font-size: 13vw;
     }
 
-    .contenu_competences .competence{
-        flex-basis: 100%;
-    }
-
-    .contenu_competences .competence .v-progress-circular{
-        width: 40vw !important;
-        height: 40vw !important;
-    }
-
     .contenu_projet .projet{
         flex-basis: 100%;
     }
@@ -409,6 +406,12 @@ Section contact
     }
 
     .form_contact input, .form_contact textarea{
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px){
+    .contenu_competences .competence{
         width: 100%;
     }
 }
