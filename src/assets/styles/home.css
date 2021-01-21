@@ -36,8 +36,8 @@ Header page
 
 .container_header{
     width: 50%;
-    animation-name: apparitionTexte;
     animation-duration: 2s;
+    animation-name: apparitionTexte;
 }
 
 .container_header .subtitle{
