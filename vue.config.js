@@ -29,7 +29,7 @@ module.exports = {
 
   /*
     pre-render for seo
-    */
+    
     
   configureWebpack:  {
     plugins: process.env.NODE_ENV === 'production' ? [
@@ -40,6 +40,6 @@ module.exports = {
         routes: [ '/', '/projet/portfolio', '/projet/briquestore', '/projet/la_rencontre', '/projet/student_lab', '/projet/qg_amboise'],
       })
     ] : []
-  }
+  }*/
 
 }
