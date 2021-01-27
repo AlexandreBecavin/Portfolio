@@ -3,7 +3,7 @@
   <div class="projet">
     <div class='header_projet'>
       <img :src="projet.img_presentation" v-bind:alt='projet.alt_img_presentation' class='img_projet'/>
-      <h2>{{projet.Titre}}</h2>
+      <h1>{{projet.Titre}}</h1>
     </div>
     <div class="scroll-downs">
       <div class="mousey">
@@ -15,27 +15,27 @@
         <img :src="projet.img_projet" v-bind:alt='projet.alt_projet' class='img_projet'/>
       </div>
       <div>
-        <h3>Présentation</h3>
+        <h2>Présentation</h2>
         <p>{{projet.presentation}}</p>
         <p class='infogras'>Année</P>
         <p class='info'>{{projet.Annee}}</P>
         <p class='infogras'>Client</p>
         <p class='info'>{{projet.Client}}</p>
-        <h3>Mes missions</h3>
+        <h2>Mes missions</h2>
         <p v-html="projet.Mission">{{projet.Mission}}</P>
-        <h3>Outils utilisés</h3>
+        <h2>Outils utilisés</h2>
         <div class='container_logi'>
-          <div v-for="(logi, i) in projet.logiciel" :key="i" class='list_logi' target="_blank">
-            <img :src="logi.img_logiciel" class='img_projet'/>
+          <div v-for="(logi, i) in projet.logiciel" :key="i" class='list_logi'>
+            <img :src="logi.img_logiciel" class='img_projet' v-bind:alt='projet.titre_logiciel'/>
             <p>{{logi.titre_logiciel}}</p>
           </div>
         </div>
         <div class="lien_projet">
-          <div v-for="(btn, i) in projet.bouton_plus" :key="i" target="_blank">
+          <div v-for="(btn, i) in projet.bouton_plus" :key="i">
  
-            <a v-if="btn.lien_site == 'false'" target="_blank" :href="btn.lien_btn" :download="btn.titre" class='btn btn2'>{{btn.titre_btn}}</a>
+            <a v-if="btn.lien_site == 'false'" target="_blank" rel="noreferrer noopener" :href="btn.lien_btn" :download="btn.titre" class='btn btn2'>{{btn.titre_btn}}</a>
 
-            <a v-else v-bind:href="btn.lien_btn" class='btn btn_site' target="_blank">{{btn.titre_btn}}</a>
+            <a v-else v-bind:href="btn.lien_btn" class='btn btn_site' target="_blank" rel="noreferrer noopener">{{btn.titre_btn}}</a>
 
             
 
@@ -51,14 +51,14 @@
 
       <div class='test'>
         <div class='contenu_projet'>
-          <div v-for="(info_projet, i) in projet.List_projet" :key="i" class="projet" target="_blank">
-            <img :src="info_projet.lien_image" class='img_projet'/>
+          <div v-for="(info_projet, i) in projet.List_projet" :key="i" class="projet" >
+            <img :src="info_projet.lien_image" class='img_projet' alt=''/>
             <router-link :to="{ name: 'projet', params: { msg: info_projet.lien_btn }}">
               <div class='detail_projet'>
                 <div>
                   <h3>{{info_projet.titre}}</h3>
                   <div class='voir_projet'>
-                    <img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau'/>
+                    <img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau' alt=''/>
                     <p>Voir le projet</p>
                   </div>
                 </div>
@@ -488,6 +488,7 @@ export default {
     return {
       title: this.projet.title,
       meta: [
+        { charset: 'utf-8' },
         { vmid: 'description', name: 'description', content: this.projet.description },
         { property: 'og:title', content: this.projet.title},
         { property: 'og:site_name', content: 'Alexandre_BECAVIN'},

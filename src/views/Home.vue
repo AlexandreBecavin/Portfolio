@@ -6,15 +6,15 @@
         <div></div>
         <div class='container_header'>
           <p class='subtitle'>Bonjour,</p>
-          <h2 class='Primary_title'>Je suis alexandre becavin_</h2>
+          <h1 class='Primary_title'>Je suis alexandre becavin_</h1>
            <a :href="require('../assets/Cv_alexandre2020.pdf')" download="Cv_alexandre2020.pdf" class='btn'>Mon cv</a>
         </div>
         <div class='container-icon'>
           <div class='icon'>
-            <a href='https://twitter.com/AlexBecavin' target="_blank"><img :src="require('../assets/img/icon/twitter.svg')" alt="Réseau twitter" class='icon_reseau'/></a>
-            <a href='https://www.linkedin.com/in/alexandre-becavin-2b2a50193/' target="_blank"><img :src="require('../assets/img/icon/linkedin.svg')" alt="Réseau linkedin" class='icon_reseau'/></a>
-            <a href='https://github.com/AlexandreBecavin' target="_blank"><img :src="require('../assets/img/icon/github.svg')" alt="Réseau github" class='icon_reseau'/></a>
-            <a href='mailto:alexandre.becavin@gmail.com' target="_blank"><img :src="require('../assets/img/icon/mail.svg')" alt="Réseau mail" class='icon_reseau'/></a>
+            <a href='https://twitter.com/AlexBecavin' target="_blank"  rel="noreferrer noopener"><img :src="require('../assets/img/icon/twitter.svg')" alt="Réseau twitter" class='icon_reseau'/></a>
+            <a href='https://www.linkedin.com/in/alexandre-becavin-2b2a50193/' target="_blank"  rel="noreferrer noopener"><img :src="require('../assets/img/icon/linkedin.svg')" alt="Réseau linkedin" class='icon_reseau'/></a>
+            <a href='https://github.com/AlexandreBecavin' target="_blank" rel="noreferrer noopener"><img :src="require('../assets/img/icon/github.svg')" alt="Réseau github" class='icon_reseau'/></a>
+            <a href='mailto:alexandre.becavin@gmail.com' target="_blank" rel="noreferrer noopener"><img :src="require('../assets/img/icon/mail.svg')" alt="Réseau mail" class='icon_reseau'/></a>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
 
       <div class='contenu_pres'>
         <p>Je m'appelle Alexandre, j'ai 19 ans et je suis passionné par le domaine du numérique depuis plusieurs années. C'est pour cela quand entrant au lycée je suis allé en Sti2D option SIN (Système d'information et numérique). Pendant ces années j'ai pu apprendre plusieurs langages tels que python, HTML/CSS, Java. À la fin de ces deux années j'ai eu mon Bac et je me suis orienté vers l'école MyDigitalSchool à Angers. Actuellement en deuxième année de cycle veb et digital. Voilà mon parcours !</P>
-         <img :src="require('../assets/img/Carte_de_visite.webp')" rel="preload"/>
+         <img :src="require('../assets/img/Carte_de_visite.webp')" alt="" rel="preload"/>
       </div>
 
     </v-container>
@@ -60,14 +60,14 @@
       <div class='test'>
 
         <div class='contenu_projet'>
-          <div v-for="(projet, i) in List_projet" :key="i" class="projet" target="_blank">
-            <img :src="projet.lien_image" class='img_projet' rel="preload"/>
+          <div v-for="(projet, i) in List_projet" :key="i" class="projet">
+            <img :src="projet.lien_image" class='img_projet' rel="preload" alt=''/>
             <router-link :to="`/projet/${projet.lien_btn}`">
               <div class='detail_projet'>
                 <div>
                   <h3>{{projet.titre}}</h3>
                   <div class='voir_projet'>
-                    <img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau' rel="preload"/>
+                    <img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau' rel="preload" alt=''/>
                     <p>Voir le projet</p>
                   </div>
                 </div>
@@ -123,7 +123,9 @@
 
       </v-container>
     </div>-->
-    <footerReseau/>
+    <div id='contact'>
+      <footerReseau/>
+    </div>
 
   </div>
 </template>
@@ -187,6 +189,7 @@ export default {
       return {
         title: 'Portfolio de Alexandre BECAVIN - Développeur Web & Webdesigner',
         meta: [
+          { charset: 'utf-8' },
           { vmid: 'description', name: 'description', content: "Bienvenue sur le portfolio d'Alexandre BECAVIN. Venez consulter et découvrir mes projets et mes compétences." },
           { property: 'og:title', content: "Portfolio de Alexandre BECAVIN - Développeur Web & Webdesigner"},
           { property: 'og:site_name', content: 'Alexandre_BECAVIN'},
@@ -200,17 +203,25 @@ export default {
 
     mounted(){
 
+      // annimation titre au scroll
       const intersectionClassHandler = el => el.isIntersecting ? el.target.classList.add('visible') : el.target.classList.remove('visible');
-
       const handleIntersect = entries => entries.forEach(el => intersectionClassHandler(el));
-
       const intersectionSettings = {
         root: null,
         rootMargin: "-10%"
       }
-
       const io = new IntersectionObserver(handleIntersect, intersectionSettings);
       document.querySelectorAll('.titre_section').forEach(el => io.observe(el));
+
+      // annimation compétences au scroll
+      const section_competences = el => el.isIntersecting ? el.target.classList.add('visible') : el.target.classList.remove('visible');
+      const competences = entries => entries.forEach(el => section_competences(el));
+      const ApparitionSettings = {
+        root: null,
+        rootMargin: "-10%"
+      }
+      const competence = new IntersectionObserver(competences, ApparitionSettings);
+      document.querySelectorAll('.contenu_competences').forEach(el => competence.observe(el));
 
 
     }

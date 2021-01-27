@@ -1,3 +1,6 @@
+const path = require('path')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+
 module.exports = {
   "transpileDependencies": [
     "vuetify"
@@ -22,5 +25,29 @@ module.exports = {
       options[0].include = 'allChunks'
       return options
     })
+
+    /*
+    pre-render for seo
+    */
+    config.plugin('html').tap(args => {
+      args[0].filename = process.env.WEBPACK_DEV_SERVER ? 'index.html' : 'i.html';
+      return args
+    })
+
+  },
+
+  /*
+    pre-render for seo
+  */
+
+  configureWebpack: {
+    plugins: [
+      new PrerenderSPAPlugin({
+        indexPath: path.resolve('dist/i.html'),
+        staticDir: path.resolve('dist'),
+        routes: [ '/', '/projet/portfolio', '/projet/briquestore', '/projet/la_rencontre', '/projet/student_lab', '/projet/qg_amboise'],
+      }),
+    ]
   }
+
 }

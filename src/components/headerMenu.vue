@@ -2,7 +2,7 @@
     <header>
     <!--  LOGO  -->
         <router-link to="/">
-            <h1 class="brand-logo">AB<span class="underscore">_</span></h1>
+            <p class="brand-logo">AB<span class="underscore">_</span></p>
         </router-link>
     <!--  HAMBURGER ICON  -->
     <div v-if="activeTab===0" class="hamburger" @click="activeTab=1">
@@ -27,7 +27,7 @@
                 <a href="/#projets">MES PROJETS_</a>
             </li>
             <li class="menu__li--fourth" :class="{'open':activeTab===1}" @click="activeTab=0">
-                <a href="#">ME CONTACTER_</a>
+                <a href="/#contact">ME CONTACTER_</a>
             </li>
         </ul>
         </div>
