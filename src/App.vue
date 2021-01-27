@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app" data-server-rendered="true">
     <div>
       <headerMenu/>
     </div>

@@ -216,7 +216,9 @@ Section Compétences
     text-align: center;
     display: flex;
     justify-content: center;
-    
+    opacity: 0;
+    transform: translateY(-60px);
+    transition-duration: 1s;
 }
 
 .contenu_competences .competence .carte{
@@ -224,7 +226,7 @@ Section Compétences
     border-radius: 0 0 20px 20px;
     margin: 0rem 2rem;
     padding: 0rem 1rem;
-    max-width: 350px;
+    max-width: 300px;
     width: 100%;
 }
 
@@ -247,6 +249,19 @@ Section Compétences
     justify-content: space-between;
     padding: 1rem 0;
 }
+
+.niveau .v-progress-circular__underlay{
+    stroke: white;
+}
+
+.contenu_competences.visible .competence{
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: 1s;
+}
+
+
+
 /* ---------------------
 Section Projet
 ----------------------*/

@@ -1,8 +1,8 @@
 <template>
     <div class='contenu_competences'>
-        <div v-for="(compet, i) in competences" :key="i" class="competence" target="_blank">
+        <div v-for="(compet, i) in competences" :key="i" class="competence">
             <div class='carte'>
-              <img class='icon_competence' :src="compet.icon_competence"/>
+              <img class='icon_competence' :src="compet.icon_competence" v-bind:alt='compet.text'/>
               <p class='titre_carte'>{{compet.text}}</p>
               <div class='niveau'>
                 <p>{{ compet.niveau}}%</p>
@@ -57,7 +57,7 @@
         },
         {
           text: 'Gestion de projet',
-          niveau: '60',
+          niveau: '40',
           icon_competence: require('../assets/img/competence/gestion_de_projet.webp'),
         },
       ],

@@ -59,7 +59,7 @@ header {
     z-index: 100;
 }
 /* logo */
-header h1{
+header .brand-logo{
     font-family: "cargo";
     font-weight: normal;
     font-size: 1.9rem;

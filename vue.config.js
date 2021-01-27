@@ -25,21 +25,29 @@ module.exports = {
       options[0].include = 'allChunks'
       return options
     })
+
+    /*
+    pre-render for seo
+    */
+    config.plugin('html').tap(args => {
+      args[0].filename = process.env.WEBPACK_DEV_SERVER ? 'index.html' : 'i.html';
+      return args
+    })
+
   },
 
   /*
     pre-render for seo
-    
-    
-  configureWebpack:  {
-    plugins: process.env.NODE_ENV === 'production' ? [
+  */
+
+  configureWebpack: {
+    plugins: [
       new PrerenderSPAPlugin({
-        // Required - The path to the webpack-outputted app to prerender.
-        staticDir: path.join(__dirname, 'dist'),
-        // Required - Routes to render.
+        indexPath: path.resolve('dist/i.html'),
+        staticDir: path.resolve('dist'),
         routes: [ '/', '/projet/portfolio', '/projet/briquestore', '/projet/la_rencontre', '/projet/student_lab', '/projet/qg_amboise'],
-      })
-    ] : []
-  }*/
+      }),
+    ]
+  }
 
 }
