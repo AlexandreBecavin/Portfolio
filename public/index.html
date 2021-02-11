@@ -34,6 +34,13 @@
       gtag('js', new Date());
 
       gtag('config', 'G-6V2V4T2DVQ');
+
+      if  ( 'serviceWorker'  dans le  navigateur  &&  process . env . NODE_ENV  ===  'production' )  { 
+        window . addEventListener ( 'load' ,  function ( )  { 
+          navigateur . serviceWorker . register ( '/service-worker.js' ) ; 
+        }); 
+      }
+
     </script>
   </body>
 </html>
