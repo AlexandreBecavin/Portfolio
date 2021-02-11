@@ -85,7 +85,7 @@ export default {
 
   data() {
     return {
-      projet: 'Portfolio',
+      projet: 'ortfolio',
       titre1: 'À Découvrir_',
       Contenu_projet: contenu_projet,
     }
@@ -109,11 +109,8 @@ export default {
 
   mounted() {
     if (this.$route.params.msg) {
-        this.projet = this.persist(this.$route.params.msg);
-    }else{
-      console.log('1');
+      this.projet = this.persist(this.$route.params.msg);
     }
-
 
     const intersectionClassHandler = el => el.isIntersecting ? el.target.classList.add('visible') : el.target.classList.remove('visible');
     const handleIntersect = entries => entries.forEach(el => intersectionClassHandler(el));
@@ -140,11 +137,9 @@ export default {
   methods:{
     persist(msg) {
       if(this.Contenu_projet.[msg] != undefined || this.Contenu_projet.[msg] != null){
-        console.log(this.Contenu_projet.[msg]);
         return this.Contenu_projet.[msg];
       }else{
-        console.log('Pas de donnée');
-        // renvoyer vers la page 404
+        this.$router.push({name : 'Home'});
       }
     },
   }

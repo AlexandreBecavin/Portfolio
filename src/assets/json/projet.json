@@ -379,5 +379,12 @@
         "lien_btn": "student_lab"
       }
     ]
+  },
+  "erreur":
+  {
+    "title": "Page erreur | Projet | Alexandre BECAVIN",
+    "description": "Cette page n'exsiste pas. une erreur est survenu",
+    "url_meta": "/projet/qg_amboise",
+    "og_image": "/img/projet/QG-Amboise/IMEA_QG-amboise.webp"
   }
 }
