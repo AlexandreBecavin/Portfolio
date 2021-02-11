@@ -50,12 +50,18 @@ module.exports = {
     ]
   },
 
-  pwa: { 
-    workboxPluginMode: 'InjectManifest', 
-    workboxOptions: { 
-      swSrc: 'src/registerServiceWorker.js' 
-    }, 
-    themeColor: '# 1da025' 
-  }
+
+
+  pwa: {
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      swSrc: 'src/service-worker.js',
+      exclude: [
+          /\.map$/, 
+          /manifest\.json$/ 
+      ],
+    },
+    themeColor: '#1da025'
+  },
 
 }
