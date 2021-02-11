@@ -65,5 +65,5 @@
     "start_url": ".",
     "display": "standalone",
     "background_color": "#000000",
-    "theme_color": "#210499"
+    "theme_color": "#000"
   }
