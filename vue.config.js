@@ -48,6 +48,14 @@ module.exports = {
         routes: [ '/', '/projet/portfolio', '/projet/briquestore', '/projet/la_rencontre', '/projet/student_lab', '/projet/qg_amboise'],
       }),
     ]
+  },
+
+  pwa: { 
+    workboxPluginMode: 'InjectManifest', 
+    workboxOptions: { 
+      swSrc: 'src/registerServiceWorker.js' 
+    }, 
+    themeColor: '# 1da025' 
   }
 
 }
