@@ -7,11 +7,19 @@
     <meta name="google-site-verification" content="7CMlAm3QI588Ptkh9qMEX0iD0lQMWWme4R-8Hhb9sgE" />
     <meta name="msvalidate.01" content="7D6BEC6384053B54800E984C928ED982" />
     <link rel="icon" href="<%= BASE_URL %>logo.ico">
-    <link rel="apple-touch-icon" href="<%= BASE_URL %>logo.ico">
-    <link rel = "manifest "href ="<%= BASE_URL %>manifest.json"/>
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6V2V4T2DVQ"></script>
-    
+
+
+    <!-- Manfifest PWA -->
+    <link rel = "manifest "href ="<%= BASE_URL %>manifest.json"/>
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "default">
+    <meta name = "apple-mobile-web-app-title" content = "AB Portfolio">
+    <link rel="apple-touch-icon" href="<%= BASE_URL %>logo.ico">
+    <meta name = "msapplication-TileImage" content = "<%= BASE_URL %>img/msapplication-icon-144x144.webp">
+    <meta name = "msapplication-TileColor" content = "#000">
+
   </head>
   <body>
     <noscript>
