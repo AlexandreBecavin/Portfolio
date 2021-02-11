@@ -55,9 +55,8 @@ module.exports = {
   pwa: {
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
-      swSrc: '/src/registerServiceWorker.js',
+      swSrc: 'src/registerServiceWorker.js',
       exclude: [
-          /\.map$/, 
           /manifest\.json$/ 
       ],
     },
