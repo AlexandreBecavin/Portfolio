@@ -38,7 +38,7 @@ Header page
 }
 
 .container_header .subtitle{
-    font-family: brush-atf, sans-serif;
+    font-family: 'Alex Brush';
     color: #FC4E54;
     transform: rotate(-15deg);
     display: inline-block;
