@@ -48,6 +48,22 @@ module.exports = {
         routes: [ '/', '/projet/portfolio', '/projet/briquestore', '/projet/la_rencontre', '/projet/student_lab', '/projet/qg_amboise'],
       }),
     ]
+  },
+
+  pwa : { 
+    nom : ' Mon application ' , 
+    themeColor : ' # 4DBA87 ' , 
+    msTileColor : ' # 000000 ' , 
+    appleMobileWebAppCapable : ' oui ' , 
+    appleMobileWebAppStatusBarStyle : ' noir ' , 
+ 
+    //  configurer le plugin workbox
+    workboxPluginMode : ' InjectManifest ' , 
+    workboxOptions : { 
+      //  swSrc est requis en mode InjectManifest.
+      swSrc : 'service-worker.js' , 
+      //  ... autres options de Workbox ...
+    }
   }
 
 }
