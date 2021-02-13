@@ -64,7 +64,8 @@ module.exports = {
       exclude: [/\.map$/, /_redirects/],
       swSrc : 'service-worker.js' , 
       //  ... autres options de Workbox ...
-    }
+    },
+    navigateFallback: '/public/index.html'
   }
 
 }
