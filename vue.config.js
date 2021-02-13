@@ -50,13 +50,19 @@ module.exports = {
     ]
   },
 
-  pwa: {
-    // configure the workbox plugin
-    workboxPluginMode: 'InjectManifest',
-    workboxOptions: {
-        // swSrc is required in InjectManifest mode.
-        swSrc: 'service-worker.js',
-        // ...other Workbox options...
+  pwa : { 
+    nom : ' Mon application ' , 
+    themeColor : ' # 4DBA87 ' , 
+    msTileColor : ' # 000000 ' , 
+    appleMobileWebAppCapable : ' oui ' , 
+    appleMobileWebAppStatusBarStyle : ' noir ' , 
+ 
+    //  configurer le plugin workbox
+    workboxPluginMode : ' InjectManifest ' , 
+    workboxOptions : { 
+      //  swSrc est requis en mode InjectManifest.
+      swSrc : 'service-worker.js' , 
+      //  ... autres options de Workbox ...
     }
   }
 
