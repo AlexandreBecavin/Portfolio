@@ -26,7 +26,7 @@
         <h2>Outils utilisés</h2>
         <div class='container_logi'>
           <div v-for="(logi, i) in projet.logiciel" :key="i" class='list_logi'>
-            <img :src="logi.img_logiciel" class='img_projet' v-bind:alt='projet.titre_logiciel'/>
+            <img :src="logi.img_logiciel" class='img_projet' v-bind:alt='logi.titre_logiciel'/>
             <p>{{logi.titre_logiciel}}</p>
           </div>
         </div>
