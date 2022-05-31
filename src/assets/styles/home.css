@@ -280,6 +280,8 @@ Section Projet
     position: relative;
     width: 80%;
     margin: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 .contenu_projet .projet  .detail_projet{

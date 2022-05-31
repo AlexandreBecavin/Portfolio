@@ -66,6 +66,7 @@
               <div class='detail_projet'>
                 <div>
                   <h3>{{projet.titre}}</h3>
+                  <p>{{projet.date}}</p>
                   <div class='voir_projet'>
                     <img :src="require('../assets/img/icon/recherche.svg')" class='icon_reseau' rel="preload" alt=''/>
                     <p>Voir le projet</p>
@@ -78,51 +79,6 @@
       </div>
     </v-container>
 
-    <!--
-    <div class='block_dark lien_section' id='contact'>
-      <v-container >
-
-        <Titre
-          v-bind:Titre='titre4'
-        />
-          
-        <div class='container_form'>
-          <div>
-            <form class='form_contact'>
-              <div>
-                <label>Nom Prénom</label>
-                <input type='text' name='nom_prenom'/>
-              </div>
-              <div>
-                <label>Email</label>
-                <input type='email' name='email'/>
-              </div>
-              <div>
-                <label>Message</label>
-                <textarea></textarea>
-              </div>
-              <div>
-                <input type='submit' name='Envoyer'>
-              </div>
-            </form>
-          </div>
-          <div>
-            <h3>Pour me joindre autrement</h3>
-            <hr>
-            <p>alexandre.becavin@gmail.com</p>
-            <div class='container-icon'>
-              <div class='icon'>
-                <a href='https://twitter.com/AlexBecavin' target="_blank"><img :src="require('../assets/img/icon/twitter.svg')" alt="Réseau twitter" class='icon_reseau'/></a>
-                <a href='https://www.linkedin.com/in/alexandre-becavin-2b2a50193/' target="_blank"><img :src="require('../assets/img/icon/linkedin.svg')" alt="Réseau linkedin" class='icon_reseau'/></a>
-                <a href='https://github.com/AlexandreBecavin' target="_blank"><img :src="require('../assets/img/icon/github.svg')" alt="Réseau github" class='icon_reseau'/></a>
-                <a href='mailto:alexandre.becavin@gmail.com' target="_blank"><img :src="require('../assets/img/icon/mail.svg')" alt="Réseau mail" class='icon_reseau'/></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </v-container>
-    </div>-->
     <div id='contact'>
       <footerReseau/>
     </div>
@@ -152,29 +108,40 @@ export default {
    data: () => ({
       List_projet: [
         {
+          lien_image: require('../assets/img/projet/FilaoPrint/bg_filaoPrint.webp'),
+          titre: 'FilaoPrint',
+          lien_btn: 'filaoprint',
+          date: '2022'
+        },
+        {
           lien_image: require('../assets/img/projet/Portfolio/IMEA_portfolio.webp'),
           titre: 'Portfolio',
-          lien_btn: 'portfolio'
+          lien_btn: 'portfolio',
+          date: '2020'
         },
         {
           lien_image: require('../assets/img/projet/Briquestore/IMEA_Briquestore.webp'),
           titre: 'Briquestore',
-          lien_btn: 'briquestore'
+          lien_btn: 'briquestore',
+          date: '2020'
         },
         {
           lien_image: require('../assets/img/projet/La_rencontre/IMEA_la-rencontre.webp'),
           titre: 'La Rencontre',
-          lien_btn: 'la_rencontre'
+          lien_btn: 'la_rencontre',
+          date: '2020'
         },
         {
           lien_image: require('../assets/img/projet/Student_lab/IMEA_student_lab.webp'),
           titre: "Student lab'",
-          lien_btn: 'student_lab'
+          lien_btn: 'student_lab',
+          date: '2020'
         },
         {
           lien_image: require('../assets/img/projet/QG-Amboise/IMEA_QG-amboise.webp'),
           titre: 'QG-Amboise',
-          lien_btn: 'qg_amboise'
+          lien_btn: 'qg_amboise',
+          date: '2020'
         },
       ],  
 

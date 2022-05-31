@@ -1,4 +1,72 @@
 {
+    "filaoprint" :{
+        "title": "FilaoPrint | Projet | Alexandre BECAVIN",
+        "description": "Je vous présente la création de FilaoPrint. Un projet étudiant sur l'impression 3d",
+        "url_meta": "/projet/FilaoPrint",
+        "og_image": "/img/projet/FilaoPrint/img_filaoPrint.webp",
+    
+        "img_presentation": "/img/projet/FilaoPrint/bg_filaoPrint.webp",
+        "alt_img_presentation": "Image FilaoPrint",
+        "Titre": "FilaoPrint",
+        "img_projet": "/img/projet/FilaoPrint/img_filaoPrint.webp",
+        "alt_projet": "FilaoPrint",
+        "presentation": "FilaoPrint est un projet étudiant. L'objectif était d'imprimer les pièce 3D des clients. <br> Comment marche la platform: <br> Le client a deux possibilitées. Il peux aller dans notre bibliothèque choisir les pièces 3D à imprimer. Le deuxième option est d'uploder son fichier 3D.",
+        "Annee": "2022",
+        "Client": "Ecole",
+        "Mission": "",
+        "logiciel": [
+          {
+              "img_logiciel": "/img/outils/Xd.webp",
+              "titre_logiciel": "AdobeXD"
+          },
+          {
+              "img_logiciel": "/img/outils/Github.webp",
+              "titre_logiciel": "Github"
+          },
+          {
+              "img_logiciel": "/img/outils/docker.webp",
+              "titre_logiciel": "Docker"
+          },
+          {
+              "img_logiciel": "/img/outils/symfony.webp",
+              "titre_logiciel": "Symfony"
+          },
+          {
+              "img_logiciel": "/img/outils/Vuejs.webp",
+              "titre_logiciel": "Vuejs"
+          }
+        ],
+        "bouton_plus":[
+          {
+            "titre_btn": "Voir le projet",
+            "lien_btn": "https://github.com/AlexandreBecavin/FilaoPrint/settings",
+            "lien_site": "false",
+            "titre": "FilaoPrint"
+          }
+        ],
+        "List_projet":[
+          {
+            "lien_image": "/img/projet/Briquestore/IMEA_Briquestore.webp",
+            "titre": "Briquestore",
+            "lien_btn": "briquestore"
+          },
+          {
+            "lien_image": "/img/projet/La_rencontre/IMEA_la-rencontre.webp",
+            "titre": "La Rencontre",
+            "lien_btn": "la_rencontre"
+          },
+          {
+            "lien_image": "/img/projet/Student_lab/IMEA_student_lab.webp",
+            "titre": "Student lab'",
+            "lien_btn": "student_lab"
+          },
+            {
+            "lien_image": "/img/projet/QG-Amboise/IMEA_QG-amboise.webp",
+            "titre": "QG-Amboise",
+            "lien_btn": "qg_amboise"
+          }
+        ]
+      },
 
   "portfolio" :{
     "title": "Portfolio | Projet | Alexandre BECAVIN",

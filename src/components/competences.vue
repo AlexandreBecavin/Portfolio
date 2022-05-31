@@ -21,29 +21,14 @@
      data: () => ({
       competences: [
         {
-          text: 'html',
-          niveau: '90',
-          icon_competence: require('../assets/img/competence/html.webp'),
-        },
-        {
           text: 'Css',
           niveau: '100',
           icon_competence: require('../assets/img/competence/css.webp'),
         },
         {
           text: 'Javascript',
-          niveau: '60',
+          niveau: '80',
           icon_competence: require('../assets/img/competence/js.webp'),
-        },
-        {
-          text: 'php',
-          niveau: '60',
-          icon_competence: require('../assets/img/competence/php.webp'),
-        },
-        {
-          text: 'VueJs',
-          niveau: '55',
-          icon_competence: require('../assets/img/competence/vuejs.webp'),
         },
         {
           text: 'Wordpress',
@@ -51,13 +36,33 @@
           icon_competence: require('../assets/img/competence/wordpress.webp'),
         },
         {
-          text: 'Prestashop',
-          niveau: '55',
-          icon_competence: require('../assets/img/competence/prestashop.webp'),
+          text: 'VueJs',
+          niveau: '80',
+          icon_competence: require('../assets/img/competence/vuejs.webp'),
         },
         {
-          text: 'Gestion de projet',
+          text: 'React',
+          niveau: '75',
+          icon_competence: require('../assets/img/competence/React.webp'),
+        },
+        {
+          text: 'Symfony',
+          niveau: '60',
+          icon_competence: require('../assets/img/competence/symfony.webp'),
+        },
+        {
+          text: 'NodeJS',
+          niveau: '75',
+          icon_competence: require('../assets/img/competence/Nodejs.webp'),
+        },
+        {
+          text: 'Docker',
           niveau: '40',
+          icon_competence: require('../assets/img/competence/docker.webp'),
+        },
+        {
+          text: 'Methode Agile',
+          niveau: '70',
           icon_competence: require('../assets/img/competence/gestion_de_projet.webp'),
         },
       ],
